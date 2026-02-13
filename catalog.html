@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог продукции | Formex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-wrap">
+        <a href="index.html" class="logo">FORM<span>EX</span></a>
+        <button type="button" class="nav-toggle" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="about.html" class="nav-link">О нас</a></li>
+                <li><a href="catalog.html" class="nav-link active">Продукция</a></li>
+                <li><a href="production.html" class="nav-link">Производство</a></li>
+                <li><a href="projects.html" class="nav-link">Проекты</a></li>
+                <li><a href="contact.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-red">Заказать звонок</a>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1503708928676-1cb796a0891e?q=80&w=1600');">
+        <div class="container">
+            <span class="red-line">СИСТЕМНЫЕ РЕШЕНИЯ</span>
+            <h1 class="js-title-animate">Каталог продукции</h1>
+            <p>Оконные и дверные системы, фасады и перегородки для коммерческого и жилого строительства.</p>
+        </div>
+    </section>
+
+    <section class="section gray-bg">
+        <div class="container">
+            <div class="catalog-filters">
+                <div class="catalog-filters-row">
+                    <span class="catalog-filters-label">Категория:</span>
+                    <div class="catalog-filter-btns">
+                        <button type="button" class="catalog-filter-btn active" data-filter="all">Все</button>
+                        <button type="button" class="catalog-filter-btn" data-filter="warm">Теплые окна</button>
+                        <button type="button" class="catalog-filter-btn" data-filter="facade">Фасадные системы</button>
+                        <button type="button" class="catalog-filter-btn" data-filter="interior">Перегородки</button>
+                    </div>
+                </div>
+                <div class="catalog-filters-row">
+                    <span class="catalog-filters-label">Назначение:</span>
+                    <div class="catalog-filter-btns">
+                        <button type="button" class="catalog-filter-btn catalog-filter-btn--scope active" data-scope="all">Все</button>
+                        <button type="button" class="catalog-filter-btn catalog-filter-btn--scope" data-scope="residential">Жилое</button>
+                        <button type="button" class="catalog-filter-btn catalog-filter-btn--scope" data-scope="commercial">Коммерческое</button>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-grid" id="catalogGrid">
+                <div class="product-card js-card-anim" data-category="warm" data-scope="residential">
+                    <div class="prod-tag">Теплый</div>
+                    <div class="prod-img" style="background-image: url('https://images.unsplash.com/photo-1503708928676-1cb796a0891e?auto=format&fit=crop&w=600');"></div>
+                    <div class="prod-info">
+                        <h3>W65 Thermo</h3>
+                        <ul class="prod-specs">
+                            <li>Монтажная глубина: 65мм</li>
+                            <li>Терморазрыв: 24мм</li>
+                        </ul>
+                        <div class="prod-btns">
+                            <a href="contact.html" class="btn-small">Тех. каталог</a>
+                            <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card js-card-anim" data-category="facade" data-scope="commercial">
+                    <div class="prod-tag">Фасад</div>
+                    <div class="prod-img" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600');"></div>
+                    <div class="prod-info">
+                        <h3>F50 Facade</h3>
+                        <ul class="prod-specs">
+                            <li>Ширина профиля: 50мм</li>
+                            <li>Макс. вес: 400кг</li>
+                        </ul>
+                        <div class="prod-btns">
+                            <a href="contact.html" class="btn-small">Тех. каталог</a>
+                            <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card js-card-anim" data-category="interior" data-scope="commercial">
+                    <div class="prod-tag">Интерьер</div>
+                    <div class="prod-img" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600');"></div>
+                    <div class="prod-info">
+                        <h3>P-Office</h3>
+                        <ul class="prod-specs">
+                            <li>Звукоизоляция: 40дБ</li>
+                            <li>Профиль: 70мм</li>
+                        </ul>
+                        <div class="prod-btns">
+                            <a href="contact.html" class="btn-small">Тех. каталог</a>
+                            <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="catalog-no-results" id="catalogNoResults" hidden>По выбранным фильтрам ничего не найдено.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <a href="index.html" class="logo">FORM<span>EX</span></a>
+            <p>Производство алюминиевых профильных систем полного цикла.</p>
+        </div>
+        <div class="footer-menu">
+            <h4>Продукция</h4>
+            <ul>
+                <li><a href="catalog.html">Окна и двери</a></li>
+                <li><a href="catalog.html">Фасадные системы</a></li>
+                <li><a href="catalog.html">Перегородки</a></li>
+            </ul>
+        </div>
+        <div class="footer-menu">
+            <h4>Компания</h4>
+            <ul>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="projects.html">Проекты</a></li>
+                <li><a href="contact.html">Дилерам</a></li>
+            </ul>
+        </div>
+        <div class="footer-contacts">
+            <h4>Контакты</h4>
+            <p>📍 Бишкек, ул. Чолпонатинская 2а</p>
+            <p>📞 +996 (773) 41 11 14</p>
+            <p>✉️ info@formex.kg</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2026 Formex. Все права защищены. Разработано согласно Brandbook.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+(function() {
+    var grid = document.getElementById('catalogGrid');
+    var noResults = document.getElementById('catalogNoResults');
+    if (!grid) return;
+
+    var categoryActive = 'all';
+    var scopeActive = 'all';
+
+    function setActive(btns, value, isScope) {
+        btns.forEach(function(btn) {
+            var attr = isScope ? 'data-scope' : 'data-filter';
+            btn.classList.toggle('active', btn.getAttribute(attr) === value);
+        });
+    }
+
+    function filterCards() {
+        var cards = grid.querySelectorAll('.product-card');
+        var visible = 0;
+        cards.forEach(function(card) {
+            var cat = card.getAttribute('data-category');
+            var scope = card.getAttribute('data-scope');
+            var matchCat = categoryActive === 'all' || cat === categoryActive;
+            var matchScope = scopeActive === 'all' || scope === scopeActive;
+            var show = matchCat && matchScope;
+            card.classList.toggle('catalog-hidden', !show);
+            if (show) visible++;
+        });
+        noResults.hidden = visible > 0;
+    }
+
+    document.querySelectorAll('.catalog-filter-btn[data-filter]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            categoryActive = btn.getAttribute('data-filter');
+            setActive(document.querySelectorAll('.catalog-filter-btn[data-filter]'), categoryActive, false);
+            filterCards();
+        });
+    });
+
+    document.querySelectorAll('.catalog-filter-btn[data-scope]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            scopeActive = btn.getAttribute('data-scope');
+            setActive(document.querySelectorAll('.catalog-filter-btn[data-scope]'), scopeActive, true);
+            filterCards();
+        });
+    });
+})();
+</script>
+</body>
+</html>
