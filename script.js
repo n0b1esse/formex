@@ -43,4 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if(target) target.scrollIntoView({ behavior: 'smooth' });
         });
     });
+
+    // 4. Переключение вкладок каталога (главная и страница каталога)
+    const catalogTabs = document.querySelectorAll('.catalog-tab');
+    const catalogCategories = document.querySelectorAll('.catalog-category');
+    if (catalogTabs.length && catalogCategories.length) {
+        catalogTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const categoryId = tab.getAttribute('data-category');
+                catalogTabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-category') === categoryId));
+                catalogCategories.forEach(cat => {
+                    const isActive = cat.getAttribute('data-category') === categoryId;
+                    cat.classList.toggle('catalog-category--hidden', !isActive);
+                    if (isActive) {
+                        cat.querySelectorAll('.js-card-anim').forEach(card => card.classList.add('visible'));
+                    }
+                });
+            });
+        });
+    }
 });
