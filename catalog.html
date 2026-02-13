@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог продукции | Formex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-wrap">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Formex"></a>
+        <button type="button" class="nav-toggle" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="about.html" class="nav-link">О нас</a></li>
+                <li><a href="catalog.html" class="nav-link active">Продукция</a></li>
+                <li><a href="production.html" class="nav-link">Производство</a></li>
+                <li><a href="projects.html" class="nav-link">Проекты</a></li>
+                <li><a href="contact.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-red">Заказать звонок</a>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-catalog.jpg');">
+        <div class="container">
+            <span class="red-line">СИСТЕМНЫЕ РЕШЕНИЯ</span>
+            <h1 class="js-title-animate">Каталог продукции</h1>
+            <p>Оконные и дверные системы, фасады и перегородки для коммерческого и жилого строительства.</p>
+        </div>
+    </section>
+
+    <section class="section gray-bg catalog-tabs-section">
+        <div class="container">
+            <div class="catalog-tabs">
+                <button type="button" class="catalog-tab active" data-category="windows">Оконные системы</button>
+                <button type="button" class="catalog-tab" data-category="doors">Дверные системы</button>
+                <button type="button" class="catalog-tab" data-category="facade">Фасадные системы</button>
+                <button type="button" class="catalog-tab" data-category="partitions">Перегородки</button>
+            </div>
+
+            <!-- Оконные системы -->
+            <div class="catalog-category" data-category="windows">
+                <div class="catalog-grid" id="catalogGrid">
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-windows.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>W65 Thermo</h3>
+                            <p class="prod-desc">Теплые алюминиевые окна с терморазрывом для жилого и коммерческого строительства.</p>
+                            <ul class="prod-specs">
+                                <li>Монтажная глубина: 65 мм</li>
+                                <li>Терморазрыв: 24 мм</li>
+                                <li>Сопротивление теплопередаче: до 0,8 м²·°C/Вт</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-facade.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>W50 Plus</h3>
+                            <p class="prod-desc">Энергоэффективные окна с повышенной звукоизоляцией для городской застройки.</p>
+                            <ul class="prod-specs">
+                                <li>Профиль: 50 мм</li>
+                                <li>Звукоизоляция: до 42 дБ</li>
+                                <li>Стеклопакет: до 44 мм</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-building.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>W70 Premium</h3>
+                            <p class="prod-desc">Премиум-серия с максимальными показателями тепло- и шумозащиты.</p>
+                            <ul class="prod-specs">
+                                <li>Монтажная глубина: 70 мм</li>
+                                <li>Терморазрыв: 28 мм</li>
+                                <li>Класс взломостойкости: RC2</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Дверные системы -->
+            <div class="catalog-category catalog-category--hidden" data-category="doors">
+                <div class="catalog-grid">
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-door.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>D-80 Entrance</h3>
+                            <p class="prod-desc">Входные группы для коммерческих объектов, офисов и жилых комплексов.</p>
+                            <ul class="prod-specs">
+                                <li>Профиль: 80 мм</li>
+                                <li>Макс. размер створки: 1200×2500 мм</li>
+                                <li>Покрытие: порошковая покраска RAL</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-door2.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>D-100 Premium</h3>
+                            <p class="prod-desc">Усиленные двери для зданий с повышенными требованиями к надёжности.</p>
+                            <ul class="prod-specs">
+                                <li>Профиль: 100 мм</li>
+                                <li>Взломостойкость: RC3</li>
+                                <li>Морозостойкость: до −40 °C</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-house.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>D-Patent</h3>
+                            <p class="prod-desc">Технические двери для подсобных помещений, машинных отделений и складов.</p>
+                            <ul class="prod-specs">
+                                <li>Профиль: 70 мм</li>
+                                <li>Звукоизоляция: до 35 дБ</li>
+                                <li>Огнестойкость: EI 30</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Фасадные системы -->
+            <div class="catalog-category catalog-category--hidden" data-category="facade">
+                <div class="catalog-grid">
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-facade2.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>F50 Facade</h3>
+                            <p class="prod-desc">Структурное остекление для современных фасадов коммерческих зданий.</p>
+                            <ul class="prod-specs">
+                                <li>Ширина профиля: 50 мм</li>
+                                <li>Макс. вес стекла: 400 кг</li>
+                                <li>Макс. пролёт: 3500 мм</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-office.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>F60 Curtain</h3>
+                            <p class="prod-desc">Система навесных вентилируемых фасадов с широким выбором облицовки.</p>
+                            <ul class="prod-specs">
+                                <li>Вентзазор: 40–80 мм</li>
+                                <li>Шаг подконструкции: 600 мм</li>
+                                <li>Класс пожарной безопасности: К0</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-building.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>F40 Slim</h3>
+                            <p class="prod-desc">Тонкие профили для панорамного остекления и витрин.</p>
+                            <ul class="prod-specs">
+                                <li>Видимая ширина: 40 мм</li>
+                                <li>Стеклопакет: до 36 мм</li>
+                                <li>Макс. высота: 6000 мм</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Перегородки -->
+            <div class="catalog-category catalog-category--hidden" data-category="partitions">
+                <div class="catalog-grid">
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-partition.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>P-Office</h3>
+                            <p class="prod-desc">Офисные перегородки с высоким уровнем звукоизоляции для open space.</p>
+                            <ul class="prod-specs">
+                                <li>Профиль: 70 мм</li>
+                                <li>Звукоизоляция: до 40 дБ</li>
+                                <li>Высота: до 4500 мм</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-office.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>P-Glass</h3>
+                            <p class="prod-desc">Стеклянные перегородки для зонирования без потери естественного света.</p>
+                            <ul class="prod-specs">
+                                <li>Толщина стекла: 8–12 мм</li>
+                                <li>Варианты: матовое, тонированное, с печатью</li>
+                                <li>Монтаж: раздвижные, распашные, стационарные</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card js-card-anim">
+                        <div class="prod-img" style="background-image: url('images/product-fire.jpg');"></div>
+                        <div class="prod-info">
+                            <h3>P-Fire</h3>
+                            <p class="prod-desc">Противопожарные перегородки для эвакуационных путей и зон риска.</p>
+                            <ul class="prod-specs">
+                                <li>Огнестойкость: EI 60 / EI 90</li>
+                                <li>Профиль: 100 мм</li>
+                                <li>Сертификация: ГОСТ</li>
+                            </ul>
+                            <div class="prod-btns">
+                                <a href="contact.html" class="btn-small">Тех. каталог</a>
+                                <a href="contact.html#form" class="btn-small-red">Запросить КП</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Formex"></a>
+            <p>Производство алюминиевых профильных систем полного цикла.</p>
+        </div>
+        <div class="footer-menu">
+            <h4>Продукция</h4>
+            <ul>
+                <li><a href="catalog.html">Оконные системы</a></li>
+                <li><a href="catalog.html">Дверные системы</a></li>
+                <li><a href="catalog.html">Фасадные системы</a></li>
+                <li><a href="catalog.html">Перегородки</a></li>
+            </ul>
+        </div>
+        <div class="footer-menu">
+            <h4>Компания</h4>
+            <ul>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="projects.html">Проекты</a></li>
+                <li><a href="contact.html">Дилерам</a></li>
+            </ul>
+        </div>
+        <div class="footer-contacts">
+            <h4>Контакты</h4>
+            <p>📍 Бишкек, ул. Чолпонатинская 2а</p>
+            <p>📞 +996 (773) 41 11 14</p>
+            <p>✉️ info@formex.kg</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2026 Formex. Все права защищены. Разработано согласно Brandbook.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
