@@ -143,6 +143,11 @@ git push -u origin main
 - Для работы с GitHub Actions (`.github/workflows/`) токен должен иметь scope **`workflow`** (для Classic tokens) или права **Actions: Write** (для Fine-grained tokens)
 - Обновите токен: https://github.com/settings/tokens → выберите токен → Edit → добавьте `workflow` scope → Update token
 
+**Если получаете ошибку `Authentication failed` или `Invalid username or token`:**
+- Токен неверный или устарели сохранённые учётные данные
+- Запустите скрипт настройки: `./scripts/setup-git-auth.sh` (введёт username и новый токен)
+- Или вручную: удалите `~/.git-credentials`, затем при `git push` введите username и новый токен
+
 **Вариант 2 — SSH (без ввода пароля при каждом пуше)**
 
 Создайте SSH-ключ и добавьте его в GitHub, затем переключите remote:
