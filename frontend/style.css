@@ -92,8 +92,13 @@ body { font-family: 'Helvetica World', Arial, sans-serif; color: var(--black); l
 .product-card--square .prod-specs { list-style: none; margin: 0; font-size: 13px; color: #666; }
 .product-card--square .prod-specs li { margin-bottom: 4px; }
 .catalog-section .catalog-tabs { margin-top: 24px; }
+/* Панели каталога (вместо карточек) */
+.catalog-panels { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+.catalog-panel { display: block; text-decoration: none; color: inherit; background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 24px 32px; font-size: 18px; font-weight: 700; transition: border-color 0.25s, box-shadow 0.25s, color 0.25s; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.catalog-panel:hover { border-color: var(--deep-red); box-shadow: 0 8px 32px rgba(0,0,0,0.1); color: var(--deep-red); }
+.catalog-panel::after { content: '→'; margin-left: 12px; opacity: 0.7; }
 @media (max-width: 1024px) { .catalog-section-cards { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 640px) { .catalog-section-cards { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .catalog-section-cards { grid-template-columns: 1fr; } .catalog-panel { padding: 18px 20px; font-size: 16px; } }
 .big-block-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .big-block-steps .prod-step { margin: 0; }
 
