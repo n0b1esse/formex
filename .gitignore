@@ -2,8 +2,15 @@
 .DS_Store
 Thumbs.db
 
-# Редакторы
+# Редакторы и Cursor
 .vscode/
 .idea/
+.cursor/
 *.swp
 *.swo
+
+# Backend / Docker
+.env
+.env.local
+backend/.env
+*.log

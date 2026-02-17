@@ -4,15 +4,62 @@
 
 ## Структура проекта
 
-- `index.html` — главная страница
-- `about.html` — о компании
-- `catalog.html` — каталог продукции
-- `production.html` — производство
-- `projects.html` — проекты
-- `contact.html` — контакты
-- `style.css`, `css.css` — стили
-- `script.js` — скрипты
-- `images/` — изображения (логотип и др.)
+```
+├── frontend/          # Сайт (HTML, CSS, JS, изображения)
+│   ├── index.html     # главная
+│   ├── about.html     # о компании
+│   ├── catalog.html   # каталог продукции
+│   ├── production.html
+│   ├── projects.html
+│   ├── contact.html
+│   ├── style.css, css.css, script.js
+│   └── images/
+├── backend/           # Docker: PostgreSQL, Redis, Directus
+│   ├── docker-compose.yml
+│   ├── .env.example
+│   └── README.md
+└── README.md
+```
+
+## Frontend
+
+Страницы и статика лежат в папке **`frontend/`**. Открывайте в браузере `frontend/index.html` или поднимайте любой статический сервер из `frontend/` (например, `npx serve frontend`).
+
+## Backend: PostgreSQL, Redis, Directus
+
+Управление контентом через админку **Directus**. Стек в папке **`backend/`**:
+
+- **PostgreSQL** — база данных
+- **Redis** — кеширование данных
+- **Directus** — headless CMS (админка и REST/GraphQL API)
+
+### Запуск
+
+1. Перейдите в папку backend и создайте `.env`:
+
+```bash
+cd backend
+cp .env.example .env
+```
+
+2. При необходимости отредактируйте `.env` (пароли, ключи). Для продакшена обязательно смените `DIRECTUS_KEY`, `DIRECTUS_SECRET`, `DIRECTUS_ADMIN_PASSWORD`, `POSTGRES_PASSWORD`.
+
+3. Запустите контейнеры:
+
+```bash
+docker compose up -d
+```
+
+4. Админка: **http://localhost:8055** (логин/пароль из `DIRECTUS_ADMIN_EMAIL` / `DIRECTUS_ADMIN_PASSWORD`).
+
+### Остановка
+
+```bash
+cd backend
+docker compose down
+```
+
+Данные хранятся в Docker-томах. Удаление с томами: `docker compose down -v`.
 
 ## Публикация на GitHub
 
@@ -38,7 +85,7 @@ cd "/home/noblesse/Проект формекс"
 git add -A
 git commit -m "Первоначальный коммит: сайт Formex"
 git branch -M main
-git remote add origin https://github.com/ВАШ_ЛОГИН/ИМЯ_РЕПОЗИТОРИЯ.git
+git remote add origin https://github.com/n0b1esse/formex.git
 git push -u origin main
 ```
 
