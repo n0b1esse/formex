@@ -78,18 +78,17 @@ git config --global user.name "Ваше Имя"
 4. Выберите **Public**, не добавляйте README, .gitignore и лицензию
 5. Нажмите **Create repository**
 
-### 3. Первый коммит и отправка
+### 3. Подключение к GitHub и отправка кода
+
+Если удалённый репозиторий ещё не добавлен:
 
 ```bash
 cd "/home/noblesse/Проект формекс"
-git add -A
-git commit -m "Первоначальный коммит: сайт Formex"
-git branch -M main
-git remote add origin https://github.com/n0b1esse/formex.git
+git remote add origin https://github.com/ВАШ_ЛОГИН/ИМЯ_РЕПОЗИТОРИЯ.git
 git push -u origin main
 ```
 
-Замените `ВАШ_ЛОГИН` и `ИМЯ_РЕПОЗИТОРИЯ` на ваши данные.
+Замените `ВАШ_ЛОГИН` и `ИМЯ_РЕПОЗИТОРИЯ` на ваши (например, `n0b1esse/formex`). Репозиторий должен быть создан на GitHub заранее (пустой, без README).
 
 ### 4. Последующие обновления
 
@@ -100,3 +99,21 @@ git add -A
 git commit -m "Описание изменений"
 git push
 ```
+
+---
+
+## Проверка админки Directus
+
+1. Установите [Docker](https://docs.docker.com/get-docker/) (Docker Desktop или Engine + Compose).
+2. В папке **backend** создайте `.env` (если ещё нет):  
+   `cp .env.example .env` — при необходимости отредактируйте пароли.
+3. Запустите стек:
+
+```bash
+cd backend
+docker compose up -d
+```
+
+4. Откройте в браузере: **http://localhost:8055**  
+   Логин и пароль по умолчанию из `.env`: `admin@formex.kg` / `admin` (в продакшене обязательно смените).
+5. Остановка: `docker compose down`.
