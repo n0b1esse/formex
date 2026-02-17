@@ -6,7 +6,14 @@
 
 Если Docker не установлен:
 
-**Для Arch Linux / EndeavourOS:**
+**Быстрая установка (скрипт):**
+
+```bash
+cd "/home/noblesse/Проект формекс"
+sudo ./scripts/install-docker.sh
+```
+
+**Или вручную (Arch Linux / EndeavourOS):**
 
 ```bash
 sudo pacman -S docker docker-compose
@@ -14,7 +21,7 @@ sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
 ```
 
-После добавления в группу `docker` **перезайдите в систему** (logout/login), чтобы изменения вступили в силу.
+После добавления в группу `docker` **перезайдите в систему** (logout/login) или выполните `newgrp docker`.
 
 **Для других дистрибутивов:**
 
