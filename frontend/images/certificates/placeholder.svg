@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400" height="560">
+  <defs>
+    <linearGradient id="cert-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fefefe"/><stop offset="100%" stop-color="#f5f4f2"/></linearGradient>
+    <filter id="cert-shadow" x="-4%" y="-2%" width="108%" height="104%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/></filter>
+  </defs>
+  <rect width="400" height="560" rx="2" fill="url(#cert-bg)" filter="url(#cert-shadow)"/>
+  <rect x="20" y="20" width="360" height="520" rx="1" fill="none" stroke="#d0ccc8" stroke-width="2"/>
+  <rect x="36" y="36" width="328" height="488" rx="1" fill="none" stroke="#e0ddd8" stroke-width="1"/>
+  <text x="200" y="100" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#333">! "$"</text>
+  <text x="200" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#666">A>>B25BAB28O</text>
+  <line x1="80" y1="180" x2="320" y2="180" stroke="#d0ccc8" stroke-width="0.5"/>
+  <text x="200" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#555">0AB>OI8< ?>4B25@6405BAO, GB> ?@>4C:F8O</text>
+  <text x="200" y="248" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#555">A>>B25BAB2C5B CAB0=>2;5==K< B@51>20=8O<</text>
+  <circle cx="200" cy="360" r="48" fill="none" stroke="#b41e1e" stroke-width="3"/>
+  <text x="200" y="368" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#b41e1e" font-weight="bold">FORMEX</text>
+  <text x="200" y="450" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#999">;59AE>;45@ A5@B8D8:0B0</text>
+</svg>

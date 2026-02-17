@@ -7,11 +7,11 @@
 ```
 ├── frontend/          # Сайт (HTML, CSS, JS, изображения)
 │   ├── index.html     # главная
-│   ├── about.html     # о компании
+│   ├── about.html     # о компании, контакты, форма
 │   ├── catalog.html   # каталог продукции
 │   ├── production.html
 │   ├── projects.html
-│   ├── contact.html
+│   ├── materials.html # материалы
 │   ├── style.css, css.css, script.js
 │   └── images/
 ├── backend/           # Docker: PostgreSQL, Redis, Directus

@@ -48,3 +48,9 @@
 | project-novotel.jpg | Новотель (снаружи и внутри) |
 | project-ngroup.jpg | NGROUP |
 | project-evrazia.jpg | ТРЦ Евразия |
+
+## Сканы благодарностей (каталог → Отзывы)
+Папка `reviews/`. Файлы: thanks-1.jpg … thanks-5.jpg. Подробнее — в `reviews/README.md`.
+
+## Сертификаты (каталог → блок между продукцией и отзывами)
+Папка `certificates/`. Файлы: cert-1.jpg, cert-2.jpg, cert-3.jpg. Подробнее — в `certificates/README.md`.

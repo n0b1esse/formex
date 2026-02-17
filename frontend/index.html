@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formex | Алюминиевые системы нового поколения</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
@@ -18,10 +19,23 @@
                 <li><a href="catalog.html" class="nav-link">Продукция</a></li>
                 <li><a href="production.html" class="nav-link">Производство</a></li>
                 <li><a href="projects.html" class="nav-link">Проекты</a></li>
-                <li><a href="contact.html" class="nav-link">Контакты</a></li>
+                <li><a href="materials.html" class="nav-link">Материалы</a></li>
             </ul>
         </nav>
-        <a href="contact.html" class="btn-red js-anim-btn">Заказать звонок</a>
+        <div class="header-actions">
+            <div class="lang-dropdown">
+                <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="listbox" aria-label="Выбор языка" data-current="ru">
+                    <span class="lang-dropdown-current">РУС</span>
+                    <span class="lang-dropdown-chevron">▼</span>
+                </button>
+                <ul class="lang-dropdown-menu" role="listbox" aria-label="Языки">
+                    <li><a href="index.html" role="option" hreflang="ru">Русский</a></li>
+                    <li><a href="en/index.html" role="option" hreflang="en">English</a></li>
+                    <li><a href="ky/index.html" role="option" hreflang="ky">Кыргызча</a></li>
+                </ul>
+            </div>
+            <a href="about.html#form" class="btn-red js-anim-btn">Заказать звонок</a>
+        </div>
     </div>
 </header>
 
@@ -40,7 +54,7 @@
         </div>
     </section>
 
-    <section class="big-block section">
+    <section class="big-block section" id="about">
         <div class="container big-block-inner">
             <div class="big-block-text js-fade-in">
                 <span class="red-line">НАДЕЖНОСТЬ И ОПЫТ</span>
@@ -50,7 +64,7 @@
                     <div class="big-stat"><strong>10+</strong><span>Лет опыта</span></div>
                     <div class="big-stat"><strong>500+</strong><span>Объектов</span></div>
                 </div>
-                <a href="about.html" class="btn-red">Подробнее о компании</a>
+                <a href="#contacts" class="btn-red">Контакты и заявка</a>
             </div>
             <div class="big-block-visual js-fade-in">
                 <div class="big-block-img-wrap">
@@ -147,20 +161,40 @@
         </div>
     </section>
 
-    <section class="section dealer-section">
-        <div class="container dealer-box js-fade-in">
-            <h2>Стать дилером Formex</h2>
-            <p>Предлагаем партнерские цены, техническую поддержку и образцы продукции для строительных компаний.</p>
-            <a href="contact.html" class="btn-red">Стать партнером</a>
+    <section class="section" id="contacts">
+        <div class="container contact-layout">
+            <div class="js-fade-in">
+                <span class="red-line">СВЯЗАТЬСЯ С НАМИ</span>
+                <h2 class="section-title">Контакты</h2>
+                <p>Свяжитесь с нами для обсуждения проекта или расчёта стоимости. Formex – лидер на рынке профильных алюминиевых систем. Надёжный производственный партнёр в Центральной Азии.</p>
+                <p style="margin-top: 20px;"><strong>ОсОО «Формекс»</strong></p>
+                <p style="margin-top: 15px;"><strong>📞 Телефон:</strong> +996 (773) 41 11 14</p>
+                <p style="margin-top: 15px;"><strong>✉️ Email:</strong> <a href="mailto:info@formex.kg">info@formex.kg</a></p>
+                <p style="margin-top: 15px;"><strong>📍 Адрес:</strong> Бишкек, ул. Чолпонатинская 2а</p>
+                <p style="margin-top: 15px;"><strong>🕐 Режим работы:</strong> Пн–Пт 9:00–18:00</p>
+            </div>
+            <div id="form" class="form-wrapper js-slide-up">
+                <div class="form-header">
+                    <h2>Получить консультацию</h2>
+                    <p>Свяжемся с вами в течение 15 минут</p>
+                </div>
+                <form class="main-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Ваше имя*" required>
+                        <input type="tel" placeholder="Телефон*" required>
+                    </div>
+                    <textarea placeholder="Ваш проект или вопрос"></textarea>
+                    <button type="submit" class="btn-red">Отправить запрос</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container preview-section">
-            <span class="red-line">СВЯЗАТЬСЯ С НАМИ</span>
-            <h2 class="section-title">Получить консультацию</h2>
-            <p>Оставьте заявку — свяжемся с вами в течение 15 минут.</p>
-            <a href="contact.html" class="btn-red">Перейти к контактам</a>
+    <section class="section dealer-section">
+        <div class="container dealer-box js-fade-in">
+            <h2>Стать партнёром Formex</h2>
+            <p>Партнёрские цены, техническая поддержка и образцы для строительных компаний. Оставьте заявку через форму выше или напишите на info@formex.kg.</p>
+            <a href="#form" class="btn-red">Отправить заявку</a>
         </div>
     </section>
 </main>
@@ -186,7 +220,7 @@
             <ul>
                 <li><a href="about.html">О нас</a></li>
                 <li><a href="projects.html">Проекты</a></li>
-                <li><a href="contact.html">Дилерам</a></li>
+                <li><a href="about.html#form">Дилерам</a></li>
             </ul>
         </div>
         <div class="footer-contacts">
