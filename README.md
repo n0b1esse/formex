@@ -25,6 +25,25 @@
 
 Страницы и статика лежат в папке **`frontend/`**. Открывайте в браузере `frontend/index.html` или поднимайте любой статический сервер из `frontend/` (например, `npx serve frontend`).
 
+### Публикация сайта (GitHub Pages)
+
+Сайт автоматически публикуется на GitHub Pages при каждом push в ветку `main`.
+
+**Ссылка на сайт:** https://n0b1esse.github.io/formex/
+
+**Настройка (если ещё не включено):**
+
+1. Перейдите в настройки репозитория: https://github.com/n0b1esse/formex/settings/pages
+2. В разделе **Source** выберите:
+   - **Source:** `GitHub Actions`
+3. Сохраните изменения
+
+После первого push в `main` сайт будет доступен по ссылке выше (обычно через 1-2 минуты).
+
+**Альтернативные варианты хостинга:**
+- **Netlify:** https://www.netlify.com/ (бесплатно, красивый домен)
+- **Vercel:** https://vercel.com/ (бесплатно, быстрый деплой)
+
 ## Backend: PostgreSQL, Redis, Directus
 
 Управление контентом через админку **Directus**. Стек в папке **`backend/`**:
@@ -119,6 +138,10 @@ git push -u origin main
 **Важно:** Если получаете ошибку `403 Permission denied`:
 - Убедитесь, что токен имеет scope **`repo`** (для Classic tokens) или права **Read and write** на репозиторий `n0b1esse/formex` (для Fine-grained tokens)
 - Создайте новый токен с правильными правами: https://github.com/settings/tokens/new
+
+**Если получаете ошибку про `workflow` scope:**
+- Для работы с GitHub Actions (`.github/workflows/`) токен должен иметь scope **`workflow`** (для Classic tokens) или права **Actions: Write** (для Fine-grained tokens)
+- Обновите токен: https://github.com/settings/tokens → выберите токен → Edit → добавьте `workflow` scope → Update token
 
 **Вариант 2 — SSH (без ввода пароля при каждом пуше)**
 
