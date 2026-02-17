@@ -40,45 +40,45 @@
 </header>
 
 <main>
-    <section class="hero">
+    <section class="hero" data-block="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="badge js-fade-in">B2B РЕШЕНИЯ</span>
-                <h1 class="js-title-animate">Комплексные решения для современной архитектуры</h1>
-                <p class="js-fade-in">FORMEX — ведущий кыргызский производитель алюминиевых систем и решений в Центральной Азии.</p>
+                <span class="badge js-fade-in" data-directus="hero.badge">B2B РЕШЕНИЯ</span>
+                <h1 class="js-title-animate" data-directus="hero.title">Комплексные решения для современной архитектуры</h1>
+                <p class="js-fade-in" data-directus="hero.subtitle">FORMEX — ведущий кыргызский производитель алюминиевых систем и решений в Центральной Азии.</p>
                 <div class="hero-btns js-fade-in">
-                    <a href="catalog.html" class="btn-red">Смотреть каталог</a>
-                    <a href="about.html" class="btn-outline">О компании</a>
+                    <a href="catalog.html" class="btn-red" data-directus="hero.btn1_text" data-directus-href="hero.btn1_link">Смотреть каталог</a>
+                    <a href="about.html" class="btn-outline" data-directus="hero.btn2_text" data-directus-href="hero.btn2_link">О компании</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="big-block section" id="about">
+    <section class="big-block section" id="about" data-block="about">
         <div class="container big-block-inner">
             <div class="big-block-text js-fade-in">
-                <span class="red-line">НАДЕЖНОСТЬ И ОПЫТ</span>
-                <h2 class="big-block-title">О компании Formex</h2>
-                <p class="big-block-desc">FORMEX — ведущий производитель алюминиевых систем и инженерных решений в Центральной Азии, признанный рынком за высокое качество, технологическое лидерство и ответственность. Полный цикл: от проектирования до экструзии и покраски. Формируем устойчивую ценность для строительства, промышленности и партнёров.</p>
+                <span class="red-line" data-directus="about.label">НАДЕЖНОСТЬ И ОПЫТ</span>
+                <h2 class="big-block-title" data-directus="about.title">О компании Formex</h2>
+                <p class="big-block-desc" data-directus="about.description">FORMEX — ведущий производитель алюминиевых систем и инженерных решений в Центральной Азии, признанный рынком за высокое качество, технологическое лидерство и ответственность. Полный цикл: от проектирования до экструзии и покраски. Формируем устойчивую ценность для строительства, промышленности и партнёров.</p>
                 <div class="big-block-stats">
-                    <div class="big-stat"><strong>10+</strong><span>Лет опыта</span></div>
-                    <div class="big-stat"><strong>500+</strong><span>Объектов</span></div>
+                    <div class="big-stat"><strong data-directus="about.stat1_num">10+</strong><span data-directus="about.stat1_label">Лет опыта</span></div>
+                    <div class="big-stat"><strong data-directus="about.stat2_num">500+</strong><span data-directus="about.stat2_label">Объектов</span></div>
                 </div>
-                <a href="#contacts" class="btn-red">Контакты и заявка</a>
+                <a href="#contacts" class="btn-red" data-directus="about.btn_text">Контакты и заявка</a>
             </div>
             <div class="big-block-visual js-fade-in">
                 <div class="big-block-img-wrap">
-                    <img src="images/factory.jpg" alt="Завод Formex">
+                    <img src="images/factory.jpg" alt="Завод Formex" data-directus="about.image">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section gray-bg catalog-section">
+    <section class="section gray-bg catalog-section" data-block="catalog">
         <div class="container">
             <div class="catalog-section-header">
-                <span class="red-line">СИСТЕМНЫЕ РЕШЕНИЯ</span>
-                <a href="catalog.html" class="btn-red catalog-section-btn">Каталог продукции</a>
+                <span class="red-line" data-directus="catalog.label">СИСТЕМНЫЕ РЕШЕНИЯ</span>
+                <a href="catalog.html" class="btn-red catalog-section-btn" data-directus="catalog.btn_text">Каталог продукции</a>
             </div>
             <div class="catalog-panels js-fade-in">
                 <a href="catalog.html#windows-doors" class="catalog-panel">Оконно-дверные системы</a>
@@ -90,18 +90,18 @@
         </div>
     </section>
 
-    <section class="big-block section production-block">
+    <section class="big-block section production-block" data-block="production">
         <div class="container big-block-inner">
             <div class="big-block-text js-fade-in">
-                <span class="red-line">ТЕХНОЛОГИИ</span>
-                <h2 class="big-block-title">Производство</h2>
-                <p class="big-block-desc">Экструзия, автоматизированная покраска RAL и лабораторный контроль на каждом этапе. Гарантия на покрытие — 15 лет.</p>
-                <ul class="big-block-list">
+                <span class="red-line" data-directus="production.label">ТЕХНОЛОГИИ</span>
+                <h2 class="big-block-title" data-directus="production.title">Производство</h2>
+                <p class="big-block-desc" data-directus="production.description">Экструзия, автоматизированная покраска RAL и лабораторный контроль на каждом этапе. Гарантия на покрытие — 15 лет.</p>
+                <ul class="big-block-list" data-directus-list="production.list_items">
                     <li>Прессовые комплексы для профилей любой сложности</li>
                     <li>Линия порошковой покраски Gema</li>
                     <li>Входной и выходной контроль качества</li>
                 </ul>
-                <a href="production.html" class="btn-red">Подробнее о производстве</a>
+                <a href="production.html" class="btn-red" data-directus="production.btn_text">Подробнее о производстве</a>
             </div>
             <div class="big-block-steps js-fade-in">
                 <div class="prod-step">
@@ -123,11 +123,11 @@
         </div>
     </section>
 
-    <section class="section gray-bg projects-section">
+    <section class="section gray-bg projects-section" data-block="projects">
         <div class="container projects-section-container">
             <div class="projects-section-header">
-                <span class="red-line">ПОРТФОЛИО</span>
-                <a href="projects.html" class="btn-red projects-section-btn">Реализованные объекты</a>
+                <span class="red-line" data-directus="projects.label">ПОРТФОЛИО</span>
+                <a href="projects.html" class="btn-red projects-section-btn" data-directus="projects.btn_text">Реализованные объекты</a>
             </div>
             <div class="projects-section-cards">
                 <a href="projects.html" class="project-card project-card--square js-fade-in">
@@ -161,40 +161,40 @@
         </div>
     </section>
 
-    <section class="section" id="contacts">
+    <section class="section" id="contacts" data-block="contacts">
         <div class="container contact-layout">
             <div class="js-fade-in">
-                <span class="red-line">СВЯЗАТЬСЯ С НАМИ</span>
-                <h2 class="section-title">Контакты</h2>
-                <p>Свяжитесь с нами для обсуждения проекта или расчёта стоимости. Formex – лидер на рынке профильных алюминиевых систем. Надёжный производственный партнёр в Центральной Азии.</p>
-                <p style="margin-top: 20px;"><strong>ОсОО «Формекс»</strong></p>
-                <p style="margin-top: 15px;"><strong>📞 Телефон:</strong> +996 (773) 41 11 14</p>
-                <p style="margin-top: 15px;"><strong>✉️ Email:</strong> <a href="mailto:info@formex.kg">info@formex.kg</a></p>
-                <p style="margin-top: 15px;"><strong>📍 Адрес:</strong> Бишкек, ул. Чолпонатинская 2а</p>
-                <p style="margin-top: 15px;"><strong>🕐 Режим работы:</strong> Пн–Пт 9:00–18:00</p>
+                <span class="red-line" data-directus="contacts.label">СВЯЗАТЬСЯ С НАМИ</span>
+                <h2 class="section-title" data-directus="contacts.title">Контакты</h2>
+                <p data-directus="contacts.description">Свяжитесь с нами для обсуждения проекта или расчёта стоимости. Formex – лидер на рынке профильных алюминиевых систем. Надёжный производственный партнёр в Центральной Азии.</p>
+                <p style="margin-top: 20px;"><strong data-directus="settings.contacts.company">ОсОО «Формекс»</strong></p>
+                <p style="margin-top: 15px;"><strong>📞 Телефон:</strong> <span data-directus="settings.contacts.phone">+996 (773) 41 11 14</span></p>
+                <p style="margin-top: 15px;"><strong>✉️ Email:</strong> <a href="mailto:info@formex.kg" data-directus="settings.contacts.email" data-directus-href="settings.contacts.email">info@formex.kg</a></p>
+                <p style="margin-top: 15px;"><strong>📍 Адрес:</strong> <span data-directus="settings.contacts.address">Бишкек, ул. Чолпонатинская 2а</span></p>
+                <p style="margin-top: 15px;"><strong>🕐 Режим работы:</strong> <span data-directus="settings.contacts.hours">Пн–Пт 9:00–18:00</span></p>
             </div>
             <div id="form" class="form-wrapper js-slide-up">
                 <div class="form-header">
-                    <h2>Получить консультацию</h2>
-                    <p>Свяжемся с вами в течение 15 минут</p>
+                    <h2 data-directus="contacts.form_title">Получить консультацию</h2>
+                    <p data-directus="contacts.form_subtitle">Свяжемся с вами в течение 15 минут</p>
                 </div>
                 <form class="main-form">
                     <div class="input-group">
-                        <input type="text" placeholder="Ваше имя*" required>
-                        <input type="tel" placeholder="Телефон*" required>
+                        <input type="text" data-directus-placeholder="contacts.form_placeholder_name" placeholder="Ваше имя*" required>
+                        <input type="tel" data-directus-placeholder="contacts.form_placeholder_phone" placeholder="Телефон*" required>
                     </div>
-                    <textarea placeholder="Ваш проект или вопрос"></textarea>
-                    <button type="submit" class="btn-red">Отправить запрос</button>
+                    <textarea data-directus-placeholder="contacts.form_placeholder_message" placeholder="Ваш проект или вопрос"></textarea>
+                    <button type="submit" class="btn-red" data-directus="contacts.form_btn">Отправить запрос</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="section dealer-section">
+    <section class="section dealer-section" data-block="dealer">
         <div class="container dealer-box js-fade-in">
-            <h2>Стать партнёром Formex</h2>
-            <p>Партнёрские цены, техническая поддержка и образцы для строительных компаний. Оставьте заявку через форму выше или напишите на info@formex.kg.</p>
-            <a href="#form" class="btn-red">Отправить заявку</a>
+            <h2 data-directus="dealer.title">Стать партнёром Formex</h2>
+            <p data-directus="dealer.description">Партнёрские цены, техническая поддержка и образцы для строительных компаний. Оставьте заявку через форму выше или напишите на info@formex.kg.</p>
+            <a href="#form" class="btn-red" data-directus="dealer.btn_text">Отправить заявку</a>
         </div>
     </section>
 </main>
@@ -237,6 +237,9 @@
     </div>
 </footer>
 
+<script>window.DIRECTUS_API_URL = window.DIRECTUS_API_URL || 'http://localhost:8055';</script>
+<script src="data/content.js"></script>
+<script src="js/content-api.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

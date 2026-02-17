@@ -40,45 +40,45 @@
 </header>
 
 <main>
-    <section class="hero">
+    <section class="hero" data-block="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="badge js-fade-in">B2B SOLUTIONS</span>
-                <h1 class="js-title-animate">Comprehensive Solutions for Modern Architecture</h1>
-                <p class="js-fade-in">FORMEX — the leading Kyrgyz manufacturer of aluminum systems and solutions in Central Asia.</p>
+                <span class="badge js-fade-in" data-directus="hero.badge">B2B SOLUTIONS</span>
+                <h1 class="js-title-animate" data-directus="hero.title">Comprehensive Solutions for Modern Architecture</h1>
+                <p class="js-fade-in" data-directus="hero.subtitle">FORMEX — the leading Kyrgyz manufacturer of aluminum systems and solutions in Central Asia.</p>
                 <div class="hero-btns js-fade-in">
-                    <a href="catalog.html" class="btn-red">View Catalog</a>
-                    <a href="about.html" class="btn-outline">About Company</a>
+                    <a href="catalog.html" class="btn-red" data-directus="hero.btn1_text" data-directus-href="hero.btn1_link">View Catalog</a>
+                    <a href="about.html" class="btn-outline" data-directus="hero.btn2_text" data-directus-href="hero.btn2_link">About Company</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="big-block section" id="about">
+    <section class="big-block section" id="about" data-block="about">
         <div class="container big-block-inner">
             <div class="big-block-text js-fade-in">
-                <span class="red-line">RELIABILITY AND EXPERIENCE</span>
-                <h2 class="big-block-title">About Formex</h2>
-                <p class="big-block-desc">FORMEX is the leading manufacturer of aluminum systems and engineered solutions in Central Asia, recognized by the market for high quality, technological excellence, and responsibility. Full cycle: from design to extrusion and painting. Building sustainable value for construction, industry, and partners.</p>
+                <span class="red-line" data-directus="about.label">RELIABILITY AND EXPERIENCE</span>
+                <h2 class="big-block-title" data-directus="about.title">About Formex</h2>
+                <p class="big-block-desc" data-directus="about.description">FORMEX is the leading manufacturer of aluminum systems and engineered solutions in Central Asia, recognized by the market for high quality, technological excellence, and responsibility. Full cycle: from design to extrusion and painting. Building sustainable value for construction, industry, and partners.</p>
                 <div class="big-block-stats">
-                    <div class="big-stat"><strong>10+</strong><span>Years of experience</span></div>
-                    <div class="big-stat"><strong>500+</strong><span>Projects completed</span></div>
+                    <div class="big-stat"><strong data-directus="about.stat1_num">10+</strong><span data-directus="about.stat1_label">Years of experience</span></div>
+                    <div class="big-stat"><strong data-directus="about.stat2_num">500+</strong><span data-directus="about.stat2_label">Projects completed</span></div>
                 </div>
-                <a href="#contacts" class="btn-red">Contacts & Request</a>
+                <a href="#contacts" class="btn-red" data-directus="about.btn_text">Contacts & Request</a>
             </div>
             <div class="big-block-visual js-fade-in">
                 <div class="big-block-img-wrap">
-                    <img src="../images/factory.jpg" alt="Formex Factory">
+                    <img src="../images/factory.jpg" alt="Formex Factory" data-directus="about.image">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section gray-bg catalog-section">
+    <section class="section gray-bg catalog-section" data-block="catalog">
         <div class="container">
             <div class="catalog-section-header">
-                <span class="red-line">SYSTEM SOLUTIONS</span>
-                <a href="catalog.html" class="btn-red catalog-section-btn">Product Catalog</a>
+                <span class="red-line" data-directus="catalog.label">SYSTEM SOLUTIONS</span>
+                <a href="catalog.html" class="btn-red catalog-section-btn" data-directus="catalog.btn_text">Product Catalog</a>
             </div>
             <div class="catalog-panels js-fade-in">
                 <a href="catalog.html#windows-doors" class="catalog-panel">Window & Door Systems</a>
@@ -90,18 +90,18 @@
         </div>
     </section>
 
-    <section class="big-block section production-block">
+    <section class="big-block section production-block" data-block="production">
         <div class="container big-block-inner">
             <div class="big-block-text js-fade-in">
-                <span class="red-line">TECHNOLOGIES</span>
-                <h2 class="big-block-title">Production</h2>
-                <p class="big-block-desc">Extrusion, automated RAL painting, and laboratory quality control at every stage. 15-year coating warranty.</p>
-                <ul class="big-block-list">
+                <span class="red-line" data-directus="production.label">TECHNOLOGIES</span>
+                <h2 class="big-block-title" data-directus="production.title">Production</h2>
+                <p class="big-block-desc" data-directus="production.description">Extrusion, automated RAL painting, and laboratory quality control at every stage. 15-year coating warranty.</p>
+                <ul class="big-block-list" data-directus-list="production.list_items">
                     <li>Press systems for profiles of any complexity</li>
                     <li>Gema powder coating line</li>
                     <li>Incoming and outgoing quality control</li>
                 </ul>
-                <a href="production.html" class="btn-red">More about Production</a>
+                <a href="production.html" class="btn-red" data-directus="production.btn_text">More about Production</a>
             </div>
             <div class="big-block-steps js-fade-in">
                 <div class="prod-step">
@@ -123,11 +123,11 @@
         </div>
     </section>
 
-    <section class="section gray-bg projects-section">
+    <section class="section gray-bg projects-section" data-block="projects">
         <div class="container projects-section-container">
             <div class="projects-section-header">
-                <span class="red-line">PORTFOLIO</span>
-                <a href="projects.html" class="btn-red projects-section-btn">Completed Projects</a>
+                <span class="red-line" data-directus="projects.label">PORTFOLIO</span>
+                <a href="projects.html" class="btn-red projects-section-btn" data-directus="projects.btn_text">Completed Projects</a>
             </div>
             <div class="projects-section-cards">
                 <a href="projects.html" class="project-card project-card--square js-fade-in">
@@ -161,40 +161,40 @@
         </div>
     </section>
 
-    <section class="section" id="contacts">
+    <section class="section" id="contacts" data-block="contacts">
         <div class="container contact-layout">
             <div class="js-fade-in">
-                <span class="red-line">CONTACT US</span>
-                <h2 class="section-title">Contacts</h2>
-                <p>Contact us to discuss your project or get a quote. Formex – the leader in the aluminum profile systems market. Your reliable manufacturing partner in Central Asia.</p>
-                <p style="margin-top: 20px;"><strong>Formex LLC</strong></p>
-                <p style="margin-top: 15px;"><strong>📞 Phone:</strong> +996 (773) 41 11 14</p>
-                <p style="margin-top: 15px;"><strong>✉️ Email:</strong> <a href="mailto:info@formex.kg">info@formex.kg</a></p>
-                <p style="margin-top: 15px;"><strong>📍 Address:</strong> Bishkek, 2a Cholponatinskaya St.</p>
-                <p style="margin-top: 15px;"><strong>🕐 Business hours:</strong> Mon–Fri 9:00–18:00</p>
+                <span class="red-line" data-directus="contacts.label">CONTACT US</span>
+                <h2 class="section-title" data-directus="contacts.title">Contacts</h2>
+                <p data-directus="contacts.description">Contact us to discuss your project or get a quote. Formex – the leader in the aluminum profile systems market. Your reliable manufacturing partner in Central Asia.</p>
+                <p style="margin-top: 20px;"><strong data-directus="settings.contacts.company">Formex LLC</strong></p>
+                <p style="margin-top: 15px;"><strong>📞 Phone:</strong> <span data-directus="settings.contacts.phone">+996 (773) 41 11 14</span></p>
+                <p style="margin-top: 15px;"><strong>✉️ Email:</strong> <a href="mailto:info@formex.kg" data-directus="settings.contacts.email" data-directus-href="settings.contacts.email">info@formex.kg</a></p>
+                <p style="margin-top: 15px;"><strong>📍 Address:</strong> <span data-directus="settings.contacts.address">Bishkek, 2a Cholponatinskaya St.</span></p>
+                <p style="margin-top: 15px;"><strong>🕐 Business hours:</strong> <span data-directus="settings.contacts.hours">Mon–Fri 9:00–18:00</span></p>
             </div>
             <div id="form" class="form-wrapper js-slide-up">
                 <div class="form-header">
-                    <h2>Get a Consultation</h2>
-                    <p>We will contact you within 15 minutes</p>
+                    <h2 data-directus="contacts.form_title">Get a Consultation</h2>
+                    <p data-directus="contacts.form_subtitle">We will contact you within 15 minutes</p>
                 </div>
                 <form class="main-form">
                     <div class="input-group">
-                        <input type="text" placeholder="Your name*" required>
-                        <input type="tel" placeholder="Phone*" required>
+                        <input type="text" data-directus-placeholder="contacts.form_placeholder_name" placeholder="Your name*" required>
+                        <input type="tel" data-directus-placeholder="contacts.form_placeholder_phone" placeholder="Phone*" required>
                     </div>
-                    <textarea placeholder="Your project or question"></textarea>
-                    <button type="submit" class="btn-red">Send Request</button>
+                    <textarea data-directus-placeholder="contacts.form_placeholder_message" placeholder="Your project or question"></textarea>
+                    <button type="submit" class="btn-red" data-directus="contacts.form_btn">Send Request</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="section dealer-section">
+    <section class="section dealer-section" data-block="dealer">
         <div class="container dealer-box js-fade-in">
-            <h2>Become a Formex Partner</h2>
-            <p>Partner prices, technical support, and samples for construction companies. Submit your request via the form above or email info@formex.kg.</p>
-            <a href="#form" class="btn-red">Submit Request</a>
+            <h2 data-directus="dealer.title">Become a Formex Partner</h2>
+            <p data-directus="dealer.description">Partner prices, technical support, and samples for construction companies. Submit your request via the form above or email info@formex.kg.</p>
+            <a href="#form" class="btn-red" data-directus="dealer.btn_text">Submit Request</a>
         </div>
     </section>
 </main>
@@ -237,6 +237,9 @@
     </div>
 </footer>
 
+<script>window.DIRECTUS_API_URL = window.DIRECTUS_API_URL || 'http://localhost:8055';</script>
+<script src="../data/content.js"></script>
+<script src="../js/content-api.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>
