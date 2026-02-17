@@ -138,7 +138,21 @@ git push -u origin main
 
 ## Проверка админки Directus
 
-1. Установите [Docker](https://docs.docker.com/get-docker/) (Docker Desktop или Engine + Compose).
+1. Установите Docker (если ещё не установлен):
+
+**Для Arch Linux / EndeavourOS:**
+
+```bash
+sudo pacman -S docker docker-compose
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+```
+
+После добавления в группу `docker` **перезайдите в систему** (logout/login).
+
+**Для других систем:** см. https://docs.docker.com/get-docker/
+
+Проверка: `docker --version` и `docker compose version`
 2. В папке **backend** создайте `.env` (если ещё нет):  
    `cp .env.example .env` — при необходимости отредактируйте пароли.
 3. Запустите стек:

@@ -2,6 +2,31 @@
 
 Стек: **PostgreSQL** (БД) + **Redis** (кеш) + **Directus** (админка и API).
 
+## Установка Docker
+
+Если Docker не установлен:
+
+**Для Arch Linux / EndeavourOS:**
+
+```bash
+sudo pacman -S docker docker-compose
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+```
+
+После добавления в группу `docker` **перезайдите в систему** (logout/login), чтобы изменения вступили в силу.
+
+**Для других дистрибутивов:**
+
+См. официальную документацию: https://docs.docker.com/get-docker/
+
+Проверка установки:
+
+```bash
+docker --version
+docker compose version
+```
+
 ## Запуск
 
 Из корня проекта или из этой папки:
