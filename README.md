@@ -100,6 +100,40 @@ git commit -m "Описание изменений"
 git push
 ```
 
+### Если `git push` зависает (не показывает запрос логина)
+
+В терминале Cursor запрос учётных данных иногда не отображается. Варианты:
+
+**Вариант 1 — пуш из обычного терминала**
+
+Откройте **обычный** терминал (Konsole, GNOME Terminal и т.п.) и выполните:
+
+```bash
+cd "/home/noblesse/Проект формекс"
+git config credential.helper store
+git push -u origin main
+```
+
+Когда появится запрос: **Username** — `n0b1esse`, **Password** — вставьте [Personal Access Token](https://github.com/settings/tokens) (не пароль от аккаунта). После первого успешного пуша пароль сохранится, и в Cursor `git push` тоже будет работать без зависания.
+
+**Важно:** Если получаете ошибку `403 Permission denied`:
+- Убедитесь, что токен имеет scope **`repo`** (для Classic tokens) или права **Read and write** на репозиторий `n0b1esse/formex` (для Fine-grained tokens)
+- Создайте новый токен с правильными правами: https://github.com/settings/tokens/new
+
+**Вариант 2 — SSH (без ввода пароля при каждом пуше)**
+
+Создайте SSH-ключ и добавьте его в GitHub, затем переключите remote:
+
+```bash
+ssh-keygen -t ed25519 -C "ваш@email" -f ~/.ssh/id_ed25519 -N ""
+# Скопируйте вывод и добавьте ключ на https://github.com/settings/keys (New SSH key)
+cat ~/.ssh/id_ed25519.pub
+
+cd "/home/noblesse/Проект формекс"
+git remote set-url origin git@github.com:n0b1esse/formex.git
+git push -u origin main
+```
+
 ---
 
 ## Проверка админки Directus
