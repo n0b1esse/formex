@@ -29,6 +29,8 @@
 
 Сайт автоматически публикуется на GitHub Pages при каждом push в ветку `main`.
 
+**Контент из Directus:** раз в час GitHub Action экспортирует контент из Directus в `frontend/data/content.json` и делает push — сайт обновляется. Настройка: см. [backend/DIRECTUS_SETUP.md](backend/DIRECTUS_SETUP.md) → раздел «Автоматическая публикация на GitHub Pages».
+
 **Ссылка на сайт:** https://n0b1esse.github.io/formex/
 
 **Настройка (если ещё не включено):**
@@ -70,6 +72,9 @@ docker compose up -d
 ```
 
 4. Админка: **http://localhost:8055** (логин/пароль из `DIRECTUS_ADMIN_EMAIL` / `DIRECTUS_ADMIN_PASSWORD`).
+5. Создайте Access Token (Settings → Access Tokens), добавьте в `.env` как `DIRECTUS_ADMIN_TOKEN`, затем запустите bootstrap: `node scripts/bootstrap-directus.mjs` — создаст коллекции и заполнит контентом.
+
+Подробнее: **[backend/DIRECTUS_SETUP.md](backend/DIRECTUS_SETUP.md)**
 
 ### Остановка
 

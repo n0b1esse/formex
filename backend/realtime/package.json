@@ -1,0 +1,12 @@
+{
+  "name": "formex-realtime",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "WebSocket + Redis Pub/Sub для мгновенного обновления контента на фронтенде",
+  "main": "server.mjs",
+  "dependencies": {
+    "express": "^4.21.0",
+    "redis": "^4.7.0",
+    "socket.io": "^4.8.0"
+  }
+}
