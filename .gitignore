@@ -9,8 +9,7 @@ Thumbs.db
 *.swp
 *.swo
 
-# Backend / Docker
+# Локальные конфиги и логи
 .env
 .env.local
-backend/.env
 *.log

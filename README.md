@@ -12,12 +12,11 @@
 │   ├── production.html
 │   ├── projects.html
 │   ├── materials.html # материалы
-│   ├── style.css, css.css, script.js
+│   ├── en/            # английская версия
+│   ├── ky/            # кыргызская версия
+│   ├── data/content.js
+│   ├── style.css, script.js
 │   └── images/
-├── backend/           # Docker: PostgreSQL, Redis, Directus
-│   ├── docker-compose.yml
-│   ├── .env.example
-│   └── README.md
 └── README.md
 ```
 
@@ -25,11 +24,11 @@
 
 Страницы и статика лежат в папке **`frontend/`**. Открывайте в браузере `frontend/index.html` или поднимайте любой статический сервер из `frontend/` (например, `npx serve frontend`).
 
+Контент подставляется из статического файла `frontend/data/content.js`.
+
 ### Публикация сайта (GitHub Pages)
 
 Сайт автоматически публикуется на GitHub Pages при каждом push в ветку `main`.
-
-**Контент из Directus:** раз в час GitHub Action экспортирует контент из Directus в `frontend/data/content.json` и делает push — сайт обновляется. Настройка: см. [backend/DIRECTUS_SETUP.md](backend/DIRECTUS_SETUP.md) → раздел «Автоматическая публикация на GitHub Pages».
 
 **Ссылка на сайт:** https://n0b1esse.github.io/formex/
 
@@ -40,50 +39,11 @@
    - **Source:** `GitHub Actions`
 3. Сохраните изменения
 
-После первого push в `main` сайт будет доступен по ссылке выше (обычно через 1-2 минуты).
+После первого push в `main` сайт будет доступен по ссылке выше (обычно через 1–2 минуты).
 
 **Альтернативные варианты хостинга:**
 - **Netlify:** https://www.netlify.com/ (бесплатно, красивый домен)
 - **Vercel:** https://vercel.com/ (бесплатно, быстрый деплой)
-
-## Backend: PostgreSQL, Redis, Directus
-
-Управление контентом через админку **Directus**. Стек в папке **`backend/`**:
-
-- **PostgreSQL** — база данных
-- **Redis** — кеширование данных
-- **Directus** — headless CMS (админка и REST/GraphQL API)
-
-### Запуск
-
-1. Перейдите в папку backend и создайте `.env`:
-
-```bash
-cd backend
-cp .env.example .env
-```
-
-2. При необходимости отредактируйте `.env` (пароли, ключи). Для продакшена обязательно смените `DIRECTUS_KEY`, `DIRECTUS_SECRET`, `DIRECTUS_ADMIN_PASSWORD`, `POSTGRES_PASSWORD`.
-
-3. Запустите контейнеры:
-
-```bash
-docker compose up -d
-```
-
-4. Админка: **http://localhost:8055** (логин/пароль из `DIRECTUS_ADMIN_EMAIL` / `DIRECTUS_ADMIN_PASSWORD`).
-5. Создайте Access Token (Settings → Access Tokens), добавьте в `.env` как `DIRECTUS_ADMIN_TOKEN`, затем запустите bootstrap: `node scripts/bootstrap-directus.mjs` — создаст коллекции и заполнит контентом.
-
-Подробнее: **[backend/DIRECTUS_SETUP.md](backend/DIRECTUS_SETUP.md)**
-
-### Остановка
-
-```bash
-cd backend
-docker compose down
-```
-
-Данные хранятся в Docker-томах. Удаление с томами: `docker compose down -v`.
 
 ## Публикация на GitHub
 
@@ -175,35 +135,3 @@ cd "/home/noblesse/Проект формекс"
 git remote set-url origin git@github.com:n0b1esse/formex.git
 git push -u origin main
 ```
-
----
-
-## Проверка админки Directus
-
-1. Установите Docker (если ещё не установлен):
-
-**Для Arch Linux / EndeavourOS:**
-
-```bash
-sudo pacman -S docker docker-compose
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
-```
-
-После добавления в группу `docker` **перезайдите в систему** (logout/login).
-
-**Для других систем:** см. https://docs.docker.com/get-docker/
-
-Проверка: `docker --version` и `docker compose version`
-2. В папке **backend** создайте `.env` (если ещё нет):  
-   `cp .env.example .env` — при необходимости отредактируйте пароли.
-3. Запустите стек:
-
-```bash
-cd backend
-docker compose up -d
-```
-
-4. Откройте в браузере: **http://localhost:8055**  
-   Логин и пароль по умолчанию из `.env`: `admin@formex.kg` / `admin` (в продакшене обязательно смените).
-5. Остановка: `docker compose down`.
