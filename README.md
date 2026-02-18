@@ -17,6 +17,7 @@
 │   ├── data/content.js
 │   ├── style.css, script.js
 │   └── images/
+├── backend/           # Пустая папка для будущего бэкенда
 └── README.md
 ```
 
