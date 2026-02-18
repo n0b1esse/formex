@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Dropdown переключения языков
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.lang-dropdown')) return;
+        document.querySelectorAll('.lang-dropdown.is-open').forEach(d => {
+            d.classList.remove('is-open');
+            const t = d.querySelector('.lang-dropdown-trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+        });
+    });
     document.querySelectorAll('.lang-dropdown').forEach(dropdown => {
         const trigger = dropdown.querySelector('.lang-dropdown-trigger');
         const menu = dropdown.querySelector('.lang-dropdown-menu');
@@ -13,16 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdown.classList.toggle('is-open');
             trigger.setAttribute('aria-expanded', dropdown.classList.contains('is-open'));
         });
-        document.addEventListener('click', () => {
-            dropdown.classList.remove('is-open');
-            trigger.setAttribute('aria-expanded', 'false');
-        });
         menu.addEventListener('click', (e) => {
             if (e.target.closest('a')) dropdown.classList.remove('is-open');
         });
     });
 
-    // 1. Мобильное меню
+    // Мобильное меню
     const toggle = document.querySelector('.nav-toggle');
     if (toggle) {
         toggle.addEventListener('click', () => {
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 1. Появление элементов при скролле
+    // Появление элементов при скролле
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -50,26 +53,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.js-fade-in, .js-slide-up, .js-card-anim').forEach(el => observer.observe(el));
 
-    // 2. Анимация Hero Title
+    // Hero title анимация
     const title = document.querySelector('.js-title-animate');
-    if(title) {
-        setTimeout(() => {
+    if (title) {
+        title.style.transition = '1s cubic-bezier(0.22, 1, 0.36, 1)';
+        requestAnimationFrame(() => {
             title.style.opacity = '1';
             title.style.transform = 'translateY(0)';
-            title.style.transition = '1s cubic-bezier(0.22, 1, 0.36, 1)';
-        }, 300);
+        });
     }
 
-    // 3. Плавная прокрутка
+    // Плавная прокрутка по якорям
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if(target) target.scrollIntoView({ behavior: 'smooth' });
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // 4. Переключение вкладок каталога (главная и страница каталога)
+    // Вкладки каталога
     const catalogTabs = document.querySelectorAll('.catalog-tab');
     const catalogCategories = document.querySelectorAll('.catalog-category');
     if (catalogTabs.length && catalogCategories.length) {
@@ -88,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Карусель отзывов на странице каталога
+    // Карусель отзывов
     const reviewsCarousel = document.querySelector('.reviews-carousel');
     if (reviewsCarousel) {
         const track = reviewsCarousel.querySelector('.reviews-carousel-track');

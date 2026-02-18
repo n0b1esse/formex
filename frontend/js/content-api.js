@@ -1,17 +1,7 @@
-/**
- * Formex Content API — загрузка контента из Directus или статического JSON
- *
- * Источники (в порядке приоритета):
- * 1. DIRECTUS_API_URL — live API (для разработки)
- * 2. data/content.json — экспортированный контент (для GitHub Pages)
- *
- * data-directus="path", data-directus-href="path", data-directus-placeholder, data-directus-list
- */
+/** Formex Content API: Directus или data/content.json / window.FORMEX_CONTENT */
 (function () {
   const isLocalhost = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-  // Только на localhost — API; на GitHub Pages / продакшене — всегда статический JSON
   const API_URL = isLocalhost ? (window.DIRECTUS_API_URL || 'http://localhost:8055') : '';
-  // Путь к экспортированному контенту (project pages: /repo/data/..., user pages: /data/...)
   const getStaticUrl = () => {
     const base = (window.FORMEX_BASE != null) ? window.FORMEX_BASE : (() => {
       const parts = location.pathname.split('/').filter(Boolean);
@@ -105,7 +95,6 @@
   }
 
   async function loadFromStatic() {
-    // Сначала — встроенный контент (content.js, без fetch)
     if (window.FORMEX_CONTENT) {
       const data = window.FORMEX_CONTENT;
       const settings = data.settings?.[lang] || {};
@@ -180,9 +169,7 @@
         console.warn('Formex Content API: API failed, fallback to static', e.message);
       }
       // Если API вернул пустой контент — пробуем статику
-      if (result && page === 'index' && !result.content?.hero && !result.content?.about) {
-        result = null;
-      }
+      if (result && page === 'index' && !result.content?.hero && !result.content?.about) result = null;
     }
     if (!result) {
       result = await loadFromStatic();
