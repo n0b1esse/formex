@@ -49,12 +49,52 @@
 
     <section class="section gray-bg catalog-tabs-section">
         <div class="container">
-            <div class="catalog-panels js-fade-in">
-                <a href="about.html#form" class="catalog-panel" id="windows-doors">Терезе-эшик системалары</a>
-                <a href="about.html#form" class="catalog-panel" id="facade">Фасаддык системалар</a>
-                <a href="about.html#form" class="catalog-panel" id="partitions">Кеңсе бөлүштүргүчтөрү</a>
-                <a href="about.html#form" class="catalog-panel" id="ventilated">Абаланган фасаддык системалар</a>
-                <a href="about.html#form" class="catalog-panel" id="special">Атайын долбоорлор</a>
+            <span class="red-line">КАТАЛОГ</span>
+            <h2 class="section-title">Системалар жана чечимдер</h2>
+            <div class="catalog-filters">
+                <button type="button" class="catalog-filter active" data-filter="all" aria-pressed="true">Бардыгы</button>
+                <button type="button" class="catalog-filter" data-filter="windows-doors">Терезе-эшик</button>
+                <button type="button" class="catalog-filter" data-filter="facade">Фасаддык</button>
+                <button type="button" class="catalog-filter" data-filter="partitions">Бөлүштүргүчтөр</button>
+                <button type="button" class="catalog-filter" data-filter="ventilated">Абаланган фасаддар</button>
+                <button type="button" class="catalog-filter" data-filter="special">Атайын долбоорлор</button>
+            </div>
+            <div class="catalog-category-cards">
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="windows-doors" id="windows-doors">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-windows.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Терезе-эшик системалары</h3>
+                        <p class="prod-desc">56, 66, 76, 82 сериялары. Турак жана коммерциялык объектилер үчүн жылуу жана муздак айнектелүү.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="facade" id="facade">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-facade.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Фасаддык системалар</h3>
+                        <p class="prod-desc">80, 100, 120 сериялары. Фасаддардын структуралык жана жарым-структуралык айнектелүүсү.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="partitions" id="partitions">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-partition.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Кеңсе бөлүштүргүчтөрү</h3>
+                        <p class="prod-desc">Кеңселер жана коомдук мейкиндиктер үчүн алюминий бөлүштүргүчтөр жана ички чечимдер.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="ventilated" id="ventilated">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-facade2.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Абаланган фасаддык системалар</h3>
+                        <p class="prod-desc">Керамогранит, клинкер, таш, алюкобонд жана башка каптоолор үчүн подсистемалар.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="special" id="special">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-building.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Атайын долбоорлор</h3>
+                        <p class="prod-desc">Жеке чечимдер: кышкы бактар, жарык түтүктөр, стандарттык эмес конструкциялар.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -107,8 +147,7 @@
 
     <section class="section catalog-reviews">
         <div class="container">
-            <span class="red-line">ПИКИРЛЕР</span>
-            <h2 class="section-title">Өнөктөштөр биз жөнүндө эмне айтышат</h2>
+            <span class="red-line red-line--large">ПИКИРЛЕР</span>
             <div class="reviews-carousel">
                 <button type="button" class="reviews-carousel-btn reviews-carousel-btn--prev" aria-label="Мурдагы пикир">&larr;</button>
                 <button type="button" class="reviews-carousel-btn reviews-carousel-btn--next" aria-label="Кийинки пикир">&rarr;</button>

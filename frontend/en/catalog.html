@@ -49,12 +49,52 @@
 
     <section class="section gray-bg catalog-tabs-section">
         <div class="container">
-            <div class="catalog-panels js-fade-in">
-                <a href="about.html#form" class="catalog-panel" id="windows-doors">Window & Door Systems</a>
-                <a href="about.html#form" class="catalog-panel" id="facade">Facade Systems</a>
-                <a href="about.html#form" class="catalog-panel" id="partitions">Office Partitions</a>
-                <a href="about.html#form" class="catalog-panel" id="ventilated">Ventilated Facade Systems</a>
-                <a href="about.html#form" class="catalog-panel" id="special">Special Projects</a>
+            <span class="red-line">CATALOG</span>
+            <h2 class="section-title">Systems and Solutions</h2>
+            <div class="catalog-filters">
+                <button type="button" class="catalog-filter active" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="catalog-filter" data-filter="windows-doors">Window & Door</button>
+                <button type="button" class="catalog-filter" data-filter="facade">Facade</button>
+                <button type="button" class="catalog-filter" data-filter="partitions">Partitions</button>
+                <button type="button" class="catalog-filter" data-filter="ventilated">Ventilated Facades</button>
+                <button type="button" class="catalog-filter" data-filter="special">Special Projects</button>
+            </div>
+            <div class="catalog-category-cards">
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="windows-doors" id="windows-doors">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-windows.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Window & Door Systems</h3>
+                        <p class="prod-desc">Series 56, 66, 76, 82. Warm and cold glazing for residential and commercial buildings.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="facade" id="facade">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-facade.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Facade Systems</h3>
+                        <p class="prod-desc">Series 80, 100, 120. Structural and semi-structural facade glazing.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="partitions" id="partitions">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-partition.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Office Partitions</h3>
+                        <p class="prod-desc">Aluminum partitions and interior solutions for offices and public spaces.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="ventilated" id="ventilated">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-facade2.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Ventilated Facade Systems</h3>
+                        <p class="prod-desc">Subsystems for ceramic granite, clinker, stone, aluminum composite and other claddings.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="special" id="special">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('../images/product-building.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Special Projects</h3>
+                        <p class="prod-desc">Custom solutions: winter gardens, skylights, non-standard structures.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -107,8 +147,7 @@
 
     <section class="section catalog-reviews">
         <div class="container">
-            <span class="red-line">REVIEWS</span>
-            <h2 class="section-title">What Our Partners Say</h2>
+            <span class="red-line red-line--large">REVIEWS</span>
             <div class="reviews-carousel">
                 <button type="button" class="reviews-carousel-btn reviews-carousel-btn--prev" aria-label="Previous review">&larr;</button>
                 <button type="button" class="reviews-carousel-btn reviews-carousel-btn--next" aria-label="Next review">&rarr;</button>

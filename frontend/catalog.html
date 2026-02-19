@@ -49,12 +49,52 @@
 
     <section class="section gray-bg catalog-tabs-section">
         <div class="container">
-            <div class="catalog-panels js-fade-in">
-                <a href="about.html#form" class="catalog-panel" id="windows-doors">Оконно-дверные системы</a>
-                <a href="about.html#form" class="catalog-panel" id="facade">Фасадные системы</a>
-                <a href="about.html#form" class="catalog-panel" id="partitions">Офисные перегородки</a>
-                <a href="about.html#form" class="catalog-panel" id="ventilated">Вентилируемые фасадные системы</a>
-                <a href="about.html#form" class="catalog-panel" id="special">Спец проекты</a>
+            <span class="red-line">КАТАЛОГ</span>
+            <h2 class="section-title">Системы и решения</h2>
+            <div class="catalog-filters">
+                <button type="button" class="catalog-filter active" data-filter="all" aria-pressed="true">Все</button>
+                <button type="button" class="catalog-filter" data-filter="windows-doors">Оконно-дверные</button>
+                <button type="button" class="catalog-filter" data-filter="facade">Фасадные</button>
+                <button type="button" class="catalog-filter" data-filter="partitions">Перегородки</button>
+                <button type="button" class="catalog-filter" data-filter="ventilated">Вентилируемые фасады</button>
+                <button type="button" class="catalog-filter" data-filter="special">Спец проекты</button>
+            </div>
+            <div class="catalog-category-cards">
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="windows-doors" id="windows-doors">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('images/product-windows.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Оконно-дверные системы</h3>
+                        <p class="prod-desc">Серии 56, 66, 76, 82. Тёплое и холодное остекление для жилых и коммерческих объектов.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="facade" id="facade">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('images/product-facade.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Фасадные системы</h3>
+                        <p class="prod-desc">Серии 80, 100, 120. Структурное и полуструктурное остекление фасадов.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="partitions" id="partitions">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('images/product-partition.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Офисные перегородки</h3>
+                        <p class="prod-desc">Алюминиевые перегородки и внутренние решения для офисов и общественных пространств.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="ventilated" id="ventilated">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('images/product-facade2.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Вентилируемые фасадные системы</h3>
+                        <p class="prod-desc">Подсистемы под керамогранит, клинкер, камень, алюкобонд и другие облицовки.</p>
+                    </div>
+                </a>
+                <a href="about.html#form" class="catalog-category-card product-card--square js-fade-in" data-category="special" id="special">
+                    <span class="prod-img-wrap"><span class="prod-img" style="background-image: url('images/product-building.jpg');"></span></span>
+                    <div class="prod-info">
+                        <h3>Спец проекты</h3>
+                        <p class="prod-desc">Индивидуальные решения: зимние сады, зенитные фонари, нестандартные конструкции.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -107,8 +147,7 @@
 
     <section class="section catalog-reviews">
         <div class="container">
-            <span class="red-line">ОТЗЫВЫ</span>
-            <h2 class="section-title">Что говорят о нас партнёры</h2>
+            <span class="red-line red-line--large">ОТЗЫВЫ</span>
             <div class="reviews-carousel">
                 <button type="button" class="reviews-carousel-btn reviews-carousel-btn--prev" aria-label="Предыдущий отзыв">&larr;</button>
                 <button type="button" class="reviews-carousel-btn reviews-carousel-btn--next" aria-label="Следующий отзыв">&rarr;</button>

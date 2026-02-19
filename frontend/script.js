@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Вкладки каталога
+    // Вкладки каталога (старый вариант с .catalog-tab и .catalog-category)
     const catalogTabs = document.querySelectorAll('.catalog-tab');
     const catalogCategories = document.querySelectorAll('.catalog-category');
     if (catalogTabs.length && catalogCategories.length) {
@@ -86,6 +86,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (isActive) {
                         cat.querySelectorAll('.js-card-anim').forEach(card => card.classList.add('visible'));
                     }
+                });
+            });
+        });
+    }
+
+    // Фильтры каталога категорий (карточки продукции)
+    const catalogFilterBtns = document.querySelectorAll('.catalog-filter');
+    const catalogCategoryCards = document.querySelectorAll('.catalog-category-card');
+    if (catalogFilterBtns.length && catalogCategoryCards.length) {
+        catalogFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                catalogFilterBtns.forEach(b => {
+                    b.classList.toggle('active', b === btn);
+                    b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+                });
+                catalogCategoryCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    const show = filter === 'all' || category === filter;
+                    card.classList.toggle('catalog-category-card--hidden', !show);
                 });
             });
         });
@@ -142,5 +162,152 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.addEventListener('resize', () => updateCarousel());
         updateCarousel();
+    }
+
+    // Панель карточки проекта — раскрывается от карточки на 46% экрана
+    const projectsGrid = document.querySelector('.projects-grid');
+    const projectDetailPanel = document.getElementById('projectDetailPanel');
+    const projectDetailOverlay = document.getElementById('projectDetailOverlay');
+    if (projectsGrid && projectDetailPanel && projectDetailOverlay) {
+        const galleryTrack = projectDetailPanel.querySelector('.project-detail-gallery-track');
+        const galleryPrev = projectDetailPanel.querySelector('.project-detail-prev');
+        const galleryNext = projectDetailPanel.querySelector('.project-detail-next');
+        const galleryDots = projectDetailPanel.querySelector('.project-detail-dots');
+        const panelTitle = projectDetailPanel.querySelector('.project-detail-title');
+        const panelDesc = projectDetailPanel.querySelector('.project-detail-desc');
+        const panelClose = projectDetailPanel.querySelector('.project-detail-close');
+        const expandDuration = 400;
+        let openCardRect = null;
+        let galleryIndex = 0;
+        let galleryImages = [];
+
+        function setGallerySlide(index) {
+            if (galleryImages.length === 0) return;
+            galleryIndex = (index + galleryImages.length) % galleryImages.length;
+            if (galleryTrack) galleryTrack.style.transform = `translateX(-${galleryIndex * 100}%)`;
+            galleryDots.querySelectorAll('.project-detail-dot').forEach((dot, i) => dot.classList.toggle('is-active', i === galleryIndex));
+        }
+
+        function openProjectDetail(card) {
+            const img = card.querySelector('img');
+            const overlay = card.querySelector('.project-overlay');
+            const h4 = overlay && overlay.querySelector('h4');
+            const p = overlay && overlay.querySelector('p');
+            if (!img || !h4 || !p) return;
+
+            const dataImages = card.getAttribute('data-images');
+            galleryImages = dataImages ? dataImages.split(',').map(s => s.trim()).filter(Boolean) : [img.src];
+            if (galleryImages.length === 0) galleryImages = [img.src];
+            if (galleryImages.length === 1) galleryImages = [img.src, img.src];
+
+            const alt = img.alt || h4.textContent;
+            galleryTrack.innerHTML = '';
+            galleryImages.forEach((src) => {
+                const slide = document.createElement('div');
+                slide.className = 'project-detail-slide';
+                const slideImg = document.createElement('img');
+                slideImg.src = src;
+                slideImg.alt = alt;
+                slide.appendChild(slideImg);
+                galleryTrack.appendChild(slide);
+            });
+            galleryDots.innerHTML = '';
+            if (galleryImages.length > 1) {
+                galleryImages.forEach((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'project-detail-dot' + (i === 0 ? ' is-active' : '');
+                    dot.setAttribute('aria-label', `Фото ${i + 1}`);
+                    dot.addEventListener('click', () => setGallerySlide(i));
+                    galleryDots.appendChild(dot);
+                });
+                if (galleryPrev) { galleryPrev.style.display = 'flex'; galleryPrev.onclick = () => setGallerySlide(galleryIndex - 1); }
+                if (galleryNext) { galleryNext.style.display = 'flex'; galleryNext.onclick = () => setGallerySlide(galleryIndex + 1); }
+            } else {
+                if (galleryPrev) galleryPrev.style.display = 'none';
+                if (galleryNext) galleryNext.style.display = 'none';
+            }
+            galleryIndex = 0;
+            setGallerySlide(0);
+
+            panelTitle.textContent = h4.textContent;
+            panelDesc.textContent = p.textContent;
+
+            const rect = card.getBoundingClientRect();
+            openCardRect = { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
+
+            projectDetailPanel.classList.remove('is-expanded');
+            projectDetailPanel.style.left = rect.left + 'px';
+            projectDetailPanel.style.top = rect.top + 'px';
+            projectDetailPanel.style.width = rect.width + 'px';
+            projectDetailPanel.style.height = rect.height + 'px';
+            projectDetailPanel.classList.add('is-open');
+            projectDetailOverlay.classList.add('is-open');
+            projectDetailPanel.setAttribute('aria-hidden', 'false');
+            projectDetailOverlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    const size = Math.min(65 * window.innerWidth / 100, 65 * window.innerHeight / 100, 820);
+                    projectDetailPanel.style.left = (window.innerWidth - size) / 2 + 'px';
+                    projectDetailPanel.style.top = (window.innerHeight - size) / 2 + 'px';
+                    projectDetailPanel.style.width = size + 'px';
+                    projectDetailPanel.style.height = size + 'px';
+                    projectDetailPanel.classList.add('is-expanded');
+                });
+            });
+        }
+
+        function closeProjectDetail() {
+            if (!openCardRect) {
+                projectDetailPanel.classList.remove('is-open', 'is-expanded');
+                projectDetailOverlay.classList.remove('is-open');
+                projectDetailPanel.setAttribute('aria-hidden', 'true');
+                projectDetailOverlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                return;
+            }
+            projectDetailPanel.classList.remove('is-expanded');
+            projectDetailPanel.style.left = openCardRect.left + 'px';
+            projectDetailPanel.style.top = openCardRect.top + 'px';
+            projectDetailPanel.style.width = openCardRect.width + 'px';
+            projectDetailPanel.style.height = openCardRect.height + 'px';
+            setTimeout(() => {
+                projectDetailPanel.classList.remove('is-open');
+                projectDetailOverlay.classList.remove('is-open');
+                projectDetailPanel.setAttribute('aria-hidden', 'true');
+                projectDetailOverlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                projectDetailPanel.style.left = '';
+                projectDetailPanel.style.top = '';
+                projectDetailPanel.style.width = '';
+                projectDetailPanel.style.height = '';
+                openCardRect = null;
+            }, expandDuration);
+        }
+
+        projectsGrid.addEventListener('click', (e) => {
+            const card = e.target.closest('.project-item');
+            if (card) {
+                e.preventDefault();
+                openProjectDetail(card);
+            }
+        });
+
+        projectDetailOverlay.addEventListener('click', closeProjectDetail);
+        if (panelClose) panelClose.addEventListener('click', closeProjectDetail);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && projectDetailPanel.classList.contains('is-open')) closeProjectDetail();
+        });
+        let galleryTouchStartX = 0;
+        if (galleryTrack) {
+            galleryTrack.addEventListener('touchstart', (e) => { galleryTouchStartX = e.touches[0].clientX; }, { passive: true });
+            galleryTrack.addEventListener('touchend', (e) => {
+                if (!projectDetailPanel.classList.contains('is-open') || galleryImages.length <= 1) return;
+                const dx = e.changedTouches[0].clientX - galleryTouchStartX;
+                if (Math.abs(dx) > 50) setGallerySlide(galleryIndex + (dx > 0 ? -1 : 1));
+            }, { passive: true });
+        }
     }
 });
