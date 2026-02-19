@@ -461,16 +461,18 @@ input:focus { border-color: var(--deep-red); }
     .nav-list { flex-direction: column; gap: 0; align-items: stretch; padding: 12px 0 0; border-top: 1px solid #eee; margin-top: 12px; }
     .nav-list li { border-bottom: 1px solid #eee; }
     .nav-link { display: block; padding: 14px 0; font-size: 14px; color: #333; }
-    .header-wrap { flex-wrap: wrap; position: relative; gap: 12px; }
+    .header-wrap { flex-wrap: wrap; position: relative; gap: 8px; }
     .logo { order: 0; margin-right: auto; }
-    .header-call-icon { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; order: 2; color: var(--deep-red); text-decoration: none; border-radius: 8px; transition: background 0.2s, color 0.2s; }
+    .header-call-icon { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; order: 2; color: var(--deep-red); text-decoration: none; border-radius: 8px; transition: background 0.2s, color 0.2s; }
     .header-call-icon:hover { background: var(--gray-bg); color: var(--deep-red); }
-    .header-call-icon svg { flex-shrink: 0; }
-    .header-actions { order: 5; width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 12px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.35s ease, opacity 0.25s ease; padding-top: 0; margin-top: 0; }
-    body.nav-open .header-actions { max-height: 120px; opacity: 1; margin-top: 16px; padding-top: 12px; border-top: 1px solid #eee; }
+    .header-call-icon svg { flex-shrink: 0; width: 20px; height: 20px; }
+    .header-actions { order: 5; width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 10px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.35s ease, opacity 0.25s ease; padding-top: 0; margin-top: 0; }
+    body.nav-open .header-actions { max-height: 120px; opacity: 1; margin-top: 12px; padding-top: 10px; border-top: 1px solid #eee; }
     .header-actions .btn-red { display: none !important; }
-    .header { padding: 12px 0; }
-    .logo img { height: 56px; }
+    .header { padding: 8px 0; }
+    .logo img { height: 44px; }
+    .nav-toggle { padding: 6px; }
+    .nav-toggle span { width: 22px; height: 2px; }
 
     .hero { height: 65vh; min-height: 400px; }
     .hero h1 { font-size: 32px; margin: 16px 0; }
