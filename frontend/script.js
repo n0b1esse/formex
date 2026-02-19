@@ -40,6 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.lang-dropdown.is-open').forEach(d => d.classList.remove('is-open'));
             });
         });
+        document.querySelectorAll('.header-call-icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                document.body.classList.remove('nav-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
     }
 
     // Появление элементов при скролле
@@ -122,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const total = cards.length;
         let index = 0;
 
-        const gap = 28;
+        const gap = 20;
 
         function getMaxIndex() {
             const wrap = reviewsCarousel.querySelector('.reviews-carousel-track-wrap');
@@ -162,6 +168,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.addEventListener('resize', () => updateCarousel());
         updateCarousel();
+    }
+
+    // Карусель сертификатов (каталог)
+    const certCarousel = document.querySelector('.certificates-carousel');
+    if (certCarousel) {
+        const certTrack = certCarousel.querySelector('.certificates-carousel-track');
+        const certCards = certCarousel.querySelectorAll('.certificate-card');
+        const certDots = certCarousel.querySelector('.certificates-carousel-dots');
+        const certPrev = certCarousel.querySelector('.certificates-carousel-btn--prev');
+        const certNext = certCarousel.querySelector('.certificates-carousel-btn--next');
+        const certTotal = certCards.length;
+        let certIndex = 0;
+        const certGap = 20;
+
+        function getCertMaxIndex() {
+            const wrap = certCarousel.querySelector('.certificates-carousel-track-wrap');
+            const card = certCards[0];
+            if (!wrap || !card) return certTotal - 1;
+            const wrapW = wrap.offsetWidth;
+            const cardW = card.offsetWidth;
+            const visible = Math.max(1, Math.floor((wrapW + certGap) / (cardW + certGap)));
+            return Math.max(0, certTotal - visible);
+        }
+
+        function updateCertCarousel() {
+            const maxIdx = getCertMaxIndex();
+            certIndex = Math.min(certIndex, maxIdx);
+            const cardW = certCards[0] ? certCards[0].offsetWidth : 0;
+            certTrack.style.transform = `translateX(-${certIndex * (cardW + certGap)}px)`;
+            certDots.querySelectorAll('button').forEach((dot, i) => {
+                dot.classList.toggle('is-active', i === certIndex);
+                dot.setAttribute('aria-current', i === certIndex ? 'true' : 'false');
+            });
+            certPrev.style.visibility = certIndex === 0 ? 'hidden' : '';
+            certNext.style.visibility = certIndex >= maxIdx ? 'hidden' : '';
+        }
+
+        certCards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('aria-label', `Сертификат ${i + 1}`);
+            dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+            dot.addEventListener('click', () => { certIndex = i; updateCertCarousel(); });
+            certDots.appendChild(dot);
+        });
+        certPrev.addEventListener('click', () => { certIndex = Math.max(0, certIndex - 1); updateCertCarousel(); });
+        certNext.addEventListener('click', () => { certIndex = Math.min(getCertMaxIndex(), certIndex + 1); updateCertCarousel(); });
+        window.addEventListener('resize', () => updateCertCarousel());
+        updateCertCarousel();
     }
 
     // Панель карточки проекта — раскрывается от карточки на 46% экрана

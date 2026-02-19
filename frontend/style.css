@@ -25,6 +25,9 @@ body { font-family: 'Helvetica World', Arial, sans-serif; color: var(--black); l
 .nav-link { text-decoration: none; color: #333; font-weight: 700; font-size: 13px; text-transform: uppercase; transition: color 0.2s; }
 .nav-link:hover { color: var(--deep-red); }
 
+/* Иконка «Заказать звонок» в шапке (только мобильная, слева от гамбургера) */
+.header-call-icon { display: none; }
+
 /* Языковой переключатель (dropdown) + кнопка */
 .header-actions { display: flex; align-items: center; gap: 16px; }
 .lang-dropdown { position: relative; }
@@ -123,62 +126,77 @@ body { font-family: 'Helvetica World', Arial, sans-serif; color: var(--black); l
 @media (max-width: 1024px) { .catalog-category-cards { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .catalog-category-cards { grid-template-columns: 1fr; gap: 20px; } .catalog-filters { gap: 8px; margin-bottom: 24px; } .catalog-filter { padding: 10px 16px; font-size: 13px; } }
 
-/* Сертификаты на странице каталога (между продукцией и отзывами) */
+/* Сертификаты на странице каталога — карусель в один ряд (средний размер) */
 .catalog-certificates { padding: 80px 0; }
 .catalog-certificates-intro { max-width: 640px; margin: 16px auto 0; text-align: center; color: var(--text-gray); font-size: 15px; line-height: 1.6; }
-.certificates-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
-.certificate-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: #fff; border: 1px solid #eee; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: box-shadow 0.25s, transform 0.25s; }
-.certificate-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-4px); }
+.certificates-carousel { position: relative; margin-top: 32px; max-width: 840px; margin-left: auto; margin-right: auto; }
+.certificates-carousel-track-wrap { overflow: hidden; }
+.certificates-carousel-track { display: flex; gap: 20px; transition: transform 0.4s ease-out; }
+.certificates-carousel .certificate-card { flex: 0 0 190px; min-width: 190px; display: flex; flex-direction: column; text-decoration: none; color: inherit; background: #fff; border: 1px solid #eee; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: box-shadow 0.25s, transform 0.25s; }
+.certificates-carousel .certificate-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); transform: translateY(-3px); }
 .certificate-card-img-wrap { display: block; aspect-ratio: 3/4; overflow: hidden; background: #f5f4f2; }
 .certificate-card img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-.certificate-card-caption { display: block; padding: 14px 16px; font-size: 13px; color: #666; text-align: center; border-top: 1px solid #eee; }
-@media (max-width: 900px) {
-    .certificates-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px) {
-    .certificates-grid { grid-template-columns: 1fr; margin-top: 28px; gap: 20px; }
+.certificate-card-caption { display: block; padding: 12px 14px; font-size: 12px; color: #666; text-align: center; border-top: 1px solid #eee; }
+.certificates-carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 40px; height: 40px; border: none; border-radius: 50%; background: #fff; box-shadow: 0 2px 14px rgba(0,0,0,0.12); color: var(--deep-red); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; transition: background 0.2s, box-shadow 0.2s; }
+.certificates-carousel-btn:hover { background: var(--deep-red); color: #fff; box-shadow: 0 4px 18px rgba(179, 43, 71, 0.35); }
+.certificates-carousel-btn--prev { left: -20px; }
+.certificates-carousel-btn--next { right: -20px; }
+.certificates-carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.certificates-carousel-dots button { width: 9px; height: 9px; border: none; border-radius: 50%; background: #ddd; cursor: pointer; padding: 0; transition: background 0.2s, transform 0.2s; }
+.certificates-carousel-dots button:hover { background: #bbb; }
+.certificates-carousel-dots button.is-active { background: var(--deep-red); transform: scale(1.2); }
+@media (max-width: 768px) {
+    .certificates-carousel { max-width: 100%; margin-top: 28px; }
+    .certificates-carousel .certificate-card { flex: 0 0 155px; min-width: 155px; }
+    .certificates-carousel-btn { width: 36px; height: 36px; font-size: 16px; left: 0; right: auto; }
+    .certificates-carousel-btn--next { right: 0; left: auto; }
 }
 
-/* Отзывы на странице каталога — карусель сканов благодарностей */
+/* Отзывы на странице каталога — карусель как у сертификатов (тот же размер и стиль) */
 .catalog-reviews { padding: 80px 0; }
-.reviews-carousel { position: relative; margin-top: 40px; }
+.reviews-carousel { position: relative; margin-top: 32px; max-width: 840px; margin-left: auto; margin-right: auto; }
 .reviews-carousel-track-wrap { overflow: hidden; }
-.reviews-carousel-track { display: flex; gap: 28px; transition: transform 0.4s ease-out; }
-.reviews-carousel .review-card { flex: 0 0 calc(100% - 20px); min-width: 0; }
-.reviews-carousel .review-card--scan { background: #fff; border: 1px solid #eee; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: box-shadow 0.25s; padding: 0; display: flex; flex-direction: column; }
-.reviews-carousel .review-card--scan:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+.reviews-carousel-track { display: flex; gap: 20px; transition: transform 0.4s ease-out; }
+.reviews-carousel .review-card { flex: 0 0 190px; min-width: 190px; }
+.reviews-carousel .review-card--scan { background: #fff; border: 1px solid #eee; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: box-shadow 0.25s, transform 0.25s; padding: 0; display: flex; flex-direction: column; }
+.reviews-carousel .review-card--scan:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); transform: translateY(-3px); }
 .review-scan-link { display: block; aspect-ratio: 3/4; overflow: hidden; background: #f5f4f2; }
 .review-scan-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-.review-scan-caption { margin: 0; padding: 14px 16px; font-size: 13px; color: #666; text-align: center; border-top: 1px solid #eee; }
+.review-scan-caption { margin: 0; padding: 12px 14px; font-size: 12px; color: #666; text-align: center; border-top: 1px solid #eee; }
 /* Текстовый отзыв (без скана) */
-.reviews-carousel .review-card--text { background: #fff; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: box-shadow 0.25s; padding: 28px; display: flex; flex-direction: column; justify-content: center; min-height: 280px; }
-.reviews-carousel .review-card--text:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
-.review-card--text .review-text { font-size: 15px; line-height: 1.6; color: var(--text-gray); margin: 0 0 16px; font-style: italic; flex: 1; }
-.review-card--text .review-author { font-size: 13px; color: #888; margin: 0; }
-.reviews-carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 48px; height: 48px; border: none; border-radius: 50%; background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.12); color: var(--deep-red); font-size: 20px; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; }
-.reviews-carousel-btn:hover { background: var(--deep-red); color: #fff; box-shadow: 0 6px 24px rgba(180, 30, 30, 0.35); }
-.reviews-carousel-btn--prev { left: -24px; }
-.reviews-carousel-btn--next { right: -24px; }
-.reviews-carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 24px; }
-.reviews-carousel-dots button { width: 10px; height: 10px; border: none; border-radius: 50%; background: #ddd; cursor: pointer; padding: 0; transition: background 0.2s, transform 0.2s; }
+.reviews-carousel .review-card--text { flex: 0 0 190px; min-width: 190px; background: #fff; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: box-shadow 0.25s, transform 0.25s; padding: 12px 14px; display: flex; flex-direction: column; justify-content: center; min-height: 260px; }
+.reviews-carousel .review-card--text:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); transform: translateY(-3px); }
+.review-card--text .review-text { font-size: 12px; line-height: 1.55; color: var(--text-gray); margin: 0 0 10px; font-style: italic; flex: 1; }
+.review-card--text .review-author { font-size: 11px; color: #888; margin: 0; }
+.reviews-carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 40px; height: 40px; border: none; border-radius: 50%; background: #fff; box-shadow: 0 2px 14px rgba(0,0,0,0.12); color: var(--deep-red); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; transition: background 0.2s, box-shadow 0.2s; }
+.reviews-carousel-btn:hover { background: var(--deep-red); color: #fff; box-shadow: 0 4px 18px rgba(179, 43, 71, 0.35); }
+.reviews-carousel-btn--prev { left: -20px; }
+.reviews-carousel-btn--next { right: -20px; }
+.reviews-carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.reviews-carousel-dots button { width: 9px; height: 9px; border: none; border-radius: 50%; background: #ddd; cursor: pointer; padding: 0; transition: background 0.2s, transform 0.2s; }
 .reviews-carousel-dots button:hover { background: #bbb; }
 .reviews-carousel-dots button.is-active { background: var(--deep-red); transform: scale(1.2); }
 .catalog-consult { padding: 80px 0; }
 .catalog-consult .preview-section p { margin-bottom: 24px; }
 @media (min-width: 769px) {
-    .reviews-carousel .review-card { flex: 0 0 calc(50% - 14px); }
+    .reviews-carousel .review-card { flex: 0 0 190px; min-width: 190px; }
 }
 @media (min-width: 1025px) {
-    .reviews-carousel .review-card { flex: 0 0 calc(33.333% - 19px); }
+    .reviews-carousel .review-card { flex: 0 0 190px; min-width: 190px; }
 }
 @media (max-width: 768px) {
-    .reviews-carousel-btn { width: 40px; height: 40px; font-size: 16px; }
-    .reviews-carousel-btn--prev { left: 0; }
-    .reviews-carousel-btn--next { right: 0; }
+    .reviews-carousel { max-width: 100%; margin-top: 28px; }
+    .reviews-carousel .review-card { flex: 0 0 155px; min-width: 155px; }
+    .reviews-carousel .review-card--text { flex: 0 0 155px; min-width: 155px; min-height: 220px; }
+    .reviews-carousel-btn { width: 36px; height: 36px; font-size: 16px; left: 0; right: auto; }
+    .reviews-carousel-btn--next { right: 0; left: auto; }
 }
 @media (max-width: 640px) {
-    .reviews-carousel { margin-top: 28px; }
-    .reviews-carousel .review-card { flex: 0 0 100%; }
+    .reviews-carousel .review-card { flex: 0 0 155px; min-width: 155px; }
+    .reviews-carousel .review-card--text { flex: 0 0 155px; min-width: 155px; min-height: 200px; padding: 10px 12px; }
+    .review-scan-caption { padding: 10px 12px; font-size: 11px; }
+    .review-card--text .review-text { font-size: 11px; }
+    .review-card--text .review-author { font-size: 10px; }
 }
 @media (max-width: 1024px) { .catalog-section-cards { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .catalog-section-cards { grid-template-columns: 1fr; } .catalog-panel { padding: 18px 20px; font-size: 16px; } }
@@ -209,7 +227,7 @@ body { font-family: 'Helvetica World', Arial, sans-serif; color: var(--black); l
 .project-card--square .project-card-img-wrap { aspect-ratio: 1; overflow: hidden; position: relative; background: #111; }
 .project-card--square .project-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
 .project-card--square:hover .project-card-img-wrap img { transform: scale(1.08); }
-.project-card--square .project-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 32px 28px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: #fff; opacity: 0; transform: translateY(12px); transition: 0.4s; }
+.project-card--square .project-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 32px 28px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: #fff; opacity: 1; transform: translateY(0); transition: 0.4s; }
 .project-card--square:hover .project-overlay { opacity: 1; transform: translateY(0); }
 .project-card--square .project-overlay h4 { font-size: 22px; margin-bottom: 6px; }
 .project-card--square .project-overlay p { font-size: 14px; opacity: 0.9; margin: 0; }
@@ -309,7 +327,7 @@ body { font-family: 'Helvetica World', Arial, sans-serif; color: var(--black); l
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .project-item { position: relative; height: 450px; overflow: hidden; }
 .project-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-.project-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: #fff; opacity: 0; transform: translateY(20px); transition: 0.4s; }
+.project-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: #fff; opacity: 1; transform: translateY(0); transition: 0.4s; }
 .project-item:hover .project-overlay { opacity: 1; transform: translateY(0); }
 .project-item:hover img { transform: scale(1.1); }
 
@@ -437,16 +455,20 @@ input:focus { border-color: var(--deep-red); }
 /* ========== АДАПТИВ: ТЕЛЕФОНЫ ========== */
 @media (max-width: 768px) {
     .lang-dropdown-trigger { padding: 6px 10px; font-size: 11px; }
-    .nav-toggle { display: flex; }
+    .nav-toggle { display: flex; order: 3; }
     .nav { width: 100%; flex-direction: column; padding: 0 24px; gap: 0; max-height: 0; overflow: hidden; transition: max-height 0.35s ease; border: none; order: 4; background: transparent; }
     body.nav-open .nav { max-height: 80vh; overflow-y: auto; }
     .nav-list { flex-direction: column; gap: 0; align-items: stretch; padding: 12px 0 0; border-top: 1px solid #eee; margin-top: 12px; }
     .nav-list li { border-bottom: 1px solid #eee; }
     .nav-link { display: block; padding: 14px 0; font-size: 14px; color: #333; }
     .header-wrap { flex-wrap: wrap; position: relative; gap: 12px; }
-    .header-actions { order: 5; width: 100%; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }
-    .header-actions .btn-red { flex: 1; min-width: 100%; text-align: center; margin-top: 0; }
-    body.nav-open .header-actions { margin-top: 16px; }
+    .logo { order: 0; margin-right: auto; }
+    .header-call-icon { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; order: 2; color: var(--deep-red); text-decoration: none; border-radius: 8px; transition: background 0.2s, color 0.2s; }
+    .header-call-icon:hover { background: var(--gray-bg); color: var(--deep-red); }
+    .header-call-icon svg { flex-shrink: 0; }
+    .header-actions { order: 5; width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 12px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.35s ease, opacity 0.25s ease; padding-top: 0; margin-top: 0; }
+    body.nav-open .header-actions { max-height: 120px; opacity: 1; margin-top: 16px; padding-top: 12px; border-top: 1px solid #eee; }
+    .header-actions .btn-red { display: none !important; }
     .header { padding: 12px 0; }
     .logo img { height: 56px; }
 

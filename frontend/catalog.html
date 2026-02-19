@@ -11,6 +11,7 @@
 <header class="header">
     <div class="container header-wrap">
         <a href="index.html" class="logo"><img src="images/logo.png" alt="Formex"></a>
+        <a href="about.html#form" class="header-call-icon" aria-label="Заказать звонок"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
         <button type="button" class="nav-toggle" aria-label="Открыть меню"><span></span><span></span><span></span></button>
         <nav class="nav">
             <ul class="nav-list">
@@ -104,43 +105,38 @@
             <span class="red-line">СЕРТИФИКАТЫ</span>
             <h2 class="section-title">Качество и соответствие стандартам</h2>
             <p class="catalog-certificates-intro">Наша продукция сертифицирована. Ниже — сертификаты соответствия и качества.</p>
-            <div class="certificates-grid">
-                <a href="images/certificates/cert-1.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
-                    <span class="certificate-card-img-wrap">
-                        <img src="images/certificates/cert-1.png" alt="Сертификат качества" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;">
-                    </span>
-                    <span class="certificate-card-caption">Сертификат качества</span>
-                </a>
-                <a href="images/certificates/cert-2.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
-                    <span class="certificate-card-img-wrap">
-                        <img src="images/certificates/cert-2.png" alt="Сертификат соответствия" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;">
-                    </span>
-                    <span class="certificate-card-caption">Сертификат соответствия</span>
-                </a>
-                <a href="images/certificates/cert-3.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
-                    <span class="certificate-card-img-wrap">
-                        <img src="images/certificates/cert-3.png" alt="Сертификат ISO 9001:2015" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;">
-                    </span>
-                    <span class="certificate-card-caption">ISO 9001:2015</span>
-                </a>
-                <a href="images/certificates/cert-4.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
-                    <span class="certificate-card-img-wrap">
-                        <img src="images/certificates/cert-4.png" alt="Сертификат качества" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;">
-                    </span>
-                    <span class="certificate-card-caption">Сертификат качества</span>
-                </a>
-                <a href="images/certificates/cert-5.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
-                    <span class="certificate-card-img-wrap">
-                        <img src="images/certificates/cert-5.png" alt="Сертификат системы менеджмента" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;">
-                    </span>
-                    <span class="certificate-card-caption">Сертификат системы менеджмента</span>
-                </a>
-                <a href="images/certificates/cert-6.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
-                    <span class="certificate-card-img-wrap">
-                        <img src="images/certificates/cert-6.png" alt="Сертификат партнёра" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;">
-                    </span>
-                    <span class="certificate-card-caption">Сертификат партнёра</span>
-                </a>
+            <div class="certificates-carousel">
+                <button type="button" class="certificates-carousel-btn certificates-carousel-btn--prev" aria-label="Предыдущий">&larr;</button>
+                <button type="button" class="certificates-carousel-btn certificates-carousel-btn--next" aria-label="Следующий">&rarr;</button>
+                <div class="certificates-carousel-track-wrap">
+                    <div class="certificates-carousel-track">
+                        <a href="images/certificates/cert-1.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
+                            <span class="certificate-card-img-wrap"><img src="images/certificates/cert-1.png" alt="Сертификат качества" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;"></span>
+                            <span class="certificate-card-caption">Сертификат качества</span>
+                        </a>
+                        <a href="images/certificates/cert-2.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
+                            <span class="certificate-card-img-wrap"><img src="images/certificates/cert-2.png" alt="Сертификат соответствия" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;"></span>
+                            <span class="certificate-card-caption">Сертификат соответствия</span>
+                        </a>
+                        <a href="images/certificates/cert-3.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
+                            <span class="certificate-card-img-wrap"><img src="images/certificates/cert-3.png" alt="Сертификат ISO 9001:2015" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;"></span>
+                            <span class="certificate-card-caption">ISO 9001:2015</span>
+                        </a>
+                        <a href="images/certificates/cert-4.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
+                            <span class="certificate-card-img-wrap"><img src="images/certificates/cert-4.png" alt="Сертификат качества" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;"></span>
+                            <span class="certificate-card-caption">Сертификат качества</span>
+                        </a>
+                        <a href="images/certificates/cert-5.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
+                            <span class="certificate-card-img-wrap"><img src="images/certificates/cert-5.png" alt="Сертификат системы менеджмента" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;"></span>
+                            <span class="certificate-card-caption">Сертификат системы менеджмента</span>
+                        </a>
+                        <a href="images/certificates/cert-6.png" class="certificate-card" target="_blank" rel="noopener" title="Открыть сертификат">
+                            <span class="certificate-card-img-wrap"><img src="images/certificates/cert-6.png" alt="Сертификат партнёра" onerror="this.src='images/certificates/placeholder.svg'; this.onerror=null;"></span>
+                            <span class="certificate-card-caption">Сертификат партнёра</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="certificates-carousel-dots" aria-hidden="true"></div>
             </div>
         </div>
     </section>
