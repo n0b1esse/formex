@@ -12,5 +12,4 @@ Thumbs.db
 # Локальные конфиги и логи
 .env
 .env.local
-backend/.env
 *.log

@@ -17,7 +17,7 @@
 │   ├── data/content.js
 │   ├── style.css, script.js
 │   └── images/
-├── backend/           # Пустая папка для будущего бэкенда
+├── .github/workflows/ # Публикация на GitHub Pages
 └── README.md
 ```
 
@@ -27,7 +27,7 @@
 
 Контент подставляется из статического файла `frontend/data/content.js`.
 
-### Публикация сайта (GitHub Pages)
+## Публикация сайта (GitHub Pages)
 
 Сайт автоматически публикуется на GitHub Pages при каждом push в ветку `main`.
 
@@ -120,8 +120,7 @@ git push -u origin main
 
 **Если получаете ошибку `Authentication failed` или `Invalid username or token`:**
 - Токен неверный или устарели сохранённые учётные данные
-- Запустите скрипт настройки: `./scripts/setup-git-auth.sh` (введёт username и новый токен)
-- Или вручную: удалите `~/.git-credentials`, затем при `git push` введите username и новый токен
+- Удалите `~/.git-credentials`, затем при `git push` введите username и новый токен
 
 **Вариант 2 — SSH (без ввода пароля при каждом пуше)**
 
